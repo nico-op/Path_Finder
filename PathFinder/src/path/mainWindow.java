@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 /*
 cf
-
+gg
 */
 
 public class mainWindow extends javax.swing.JFrame {
