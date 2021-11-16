@@ -11,6 +11,8 @@ import javax.swing.JPanel;
 public class mainWindow extends javax.swing.JFrame {
     
     backgroundPanel background = new backgroundPanel();
+    //Pancho es el ser más idiota que conozco
+    
    
 
     /**
