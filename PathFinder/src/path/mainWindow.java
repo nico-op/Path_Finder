@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 public class mainWindow extends javax.swing.JFrame {
     
     backgroundPanel background = new backgroundPanel();
+    //Holaaaaa, esto sirve??
     
    
 
