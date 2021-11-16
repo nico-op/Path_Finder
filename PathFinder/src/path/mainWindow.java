@@ -1,18 +1,14 @@
 
 package path;
-//
+
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-
-
 public class mainWindow extends javax.swing.JFrame {
     
     backgroundPanel background = new backgroundPanel();
-    
-   
 
     /**
      * Creates new form mainWindow
@@ -33,13 +29,15 @@ public class mainWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        buttonOrigen = new javax.swing.JButton();
+        textFieldOrigen = new javax.swing.JTextField();
         labelOrigen = new javax.swing.JLabel();
         labelDestiny = new javax.swing.JLabel();
+        textFieldDestiny = new javax.swing.JTextField();
+        buttonDestiny = new javax.swing.JButton();
         buttonSend = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         labelAnswer = new javax.swing.JLabel();
-        Origin = new javax.swing.JComboBox<>();
-        Destiny = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 255));
@@ -47,9 +45,19 @@ public class mainWindow extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
+        buttonOrigen.setText("Send");
+
+        textFieldOrigen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldOrigenActionPerformed(evt);
+            }
+        });
+
         labelOrigen.setText("Origen");
 
         labelDestiny.setText("Destiny");
+
+        buttonDestiny.setText("Send");
 
         buttonSend.setText("Consult");
         buttonSend.addActionListener(new java.awt.event.ActionListener() {
@@ -64,20 +72,6 @@ public class mainWindow extends javax.swing.JFrame {
         labelAnswer.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         labelAnswer.setText("esta");
 
-        Origin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Curridabat", "Desamparados", "Escazú", "Guadalupe", "Hatillo", "Moravia", "Sabanilla", "San Pedro", "Santa Ana", "Santiago", "Tibás", " " }));
-        Origin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OriginActionPerformed(evt);
-            }
-        });
-
-        Destiny.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Curridabat", "Desamparados", "Escazú", "Guadalupe", "Hatillo", "Moravia", "Sabanilla", "San Pedro", "Santa Ana", "Santiago", "Tibás", " " }));
-        Destiny.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DestinyActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,35 +83,40 @@ public class mainWindow extends javax.swing.JFrame {
                     .addComponent(labelDestiny))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Origin, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Destiny, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
+                        .addComponent(textFieldOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(145, 145, 145)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textFieldDestiny, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonDestiny, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(labelAnswer, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+                .addContainerGap(99, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelOrigen)
-                            .addComponent(Origin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(buttonOrigen)
+                            .addComponent(textFieldOrigen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelOrigen))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelAnswer)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(labelDestiny)
-                                .addComponent(Destiny, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(11, 11, 11))
+                                .addComponent(textFieldDestiny, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(buttonDestiny)
+                                .addComponent(labelAnswer))
+                            .addComponent(labelDestiny))
+                        .addGap(8, 8, 8))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonSend)
@@ -134,7 +133,7 @@ public class mainWindow extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 497, Short.MAX_VALUE)
+                .addGap(0, 495, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -145,15 +144,9 @@ public class mainWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonSendActionPerformed
 
-    private void OriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OriginActionPerformed
-        String origin = Origin.getSelectedItem().toString();
-        System.out.println("Origen: " + origin);
-    }//GEN-LAST:event_OriginActionPerformed
-
-    private void DestinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinyActionPerformed
-        String destiny = Destiny.getSelectedItem().toString();
-        System.out.println("Destino: " + destiny);
-    }//GEN-LAST:event_DestinyActionPerformed
+    private void textFieldOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldOrigenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldOrigenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,14 +185,16 @@ public class mainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JComboBox<String> Destiny;
-    public static javax.swing.JComboBox<String> Origin;
+    private javax.swing.JButton buttonDestiny;
+    private javax.swing.JButton buttonOrigen;
     private javax.swing.JButton buttonSend;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelAnswer;
     private javax.swing.JLabel labelDestiny;
     private javax.swing.JLabel labelOrigen;
+    private javax.swing.JTextField textFieldDestiny;
+    private javax.swing.JTextField textFieldOrigen;
     // End of variables declaration//GEN-END:variables
 
 class backgroundPanel extends JPanel{
