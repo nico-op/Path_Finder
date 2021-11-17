@@ -204,15 +204,17 @@ public class mainWindow extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 class backgroundPanel extends JPanel{
-   /* private Image image;
+    private Image image;
     
     @Override
     public void paint(Graphics g){
-        image = new ImageIcon(getClass().getResource("/images/mapa.png")).getImage();
+        image = new ImageIcon(getClass().getResource("/path/mapa.png")).getImage();
         g.drawImage(image, 0, 0, getWidth(), 500, rootPane);
         setOpaque(false);
         super.paint(g);
-    }*/
+    }
+    
+     
 }
     
 }///hy
