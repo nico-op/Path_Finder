@@ -8,6 +8,8 @@ package path;
 import path.mainWindow;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import path.mainWindow;
 
 /**
@@ -21,25 +23,31 @@ public class AyudaViajero extends javax.swing.JFrame {
      */
     public AyudaViajero() {
         initComponents();
+        List cities = new LinkedList<>();
+        
+        cities.add("Curridabat");
+        cities.add("Barbacoas");
+        cities.add("Hatillo");
+        cities.add("Santa Ana");
+        cities.add("Santiago");
+        cities.add("San Antonio");
+        cities.add("Sabanilla");
+        cities.add("Desamparados");
+        cities.add("San Pedro");
+        cities.add("Alajuelita");
+        cities.add("Tibás");
+        cities.add("Escazú");
+        cities.add("Moravia");
+        cities.add("Ciudad Colón");
+        cities.add("Guadalupe");
+       //hola
+        
+        
+        Collections.sort(cities);
         Lugares.addItem("Seleccione un lugar");
-        Lugares.addItem("Alajuelita");
-        Lugares.addItem("Escazú");
-        Lugares.addItem("Aserrí");
-        Lugares.addItem("Santiago");
-        Lugares.addItem("Desamparados");
-        Lugares.addItem("Hatillo");
-        Lugares.addItem("Barbacoas");
-        Lugares.addItem("Santa Ana");
-        Lugares.addItem("San Pedro");
-        Lugares.addItem("Moravia");
-        Lugares.addItem("Curridabat");
-        Lugares.addItem("Ciudad Colón");
-        Lugares.addItem("Moravia");
-        Lugares.addItem("Sabanilla");
-        Lugares.addItem("Tibás");
-        
-        
-        
+        cities.forEach(city -> {
+            Lugares.addItem((String) city);
+        });
      
       
     }
