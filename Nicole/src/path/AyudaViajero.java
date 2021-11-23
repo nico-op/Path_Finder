@@ -8,6 +8,8 @@ package path;
 import path.mainWindow;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import path.mainWindow;
 
 /**
@@ -21,7 +23,32 @@ public class AyudaViajero extends javax.swing.JFrame {
      */
     public AyudaViajero() {
         initComponents();
-          
+        List cities = new LinkedList<>();
+        
+        cities.add("Curridabat");
+        cities.add("Barbacoas");
+        cities.add("Hatillo");
+        cities.add("Santa Ana");
+        cities.add("Santiago");
+        cities.add("San Antonio");
+        cities.add("Sabanilla");
+        cities.add("Desamparados");
+        cities.add("San Pedro");
+        cities.add("Alajuelita");
+        cities.add("Tibás");
+        cities.add("Escazú");
+        cities.add("Moravia");
+        cities.add("Ciudad Colón");
+        cities.add("Guadalupe");
+       //hola
+        
+        
+        Collections.sort(cities);
+        Lugares.addItem("Seleccione un lugar");
+        cities.forEach(city -> {
+            Lugares.addItem((String) city);
+        });
+     
       
     }
 
@@ -57,7 +84,9 @@ public class AyudaViajero extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         label1 = new java.awt.Label();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Lugares = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        mostrar = new javax.swing.JTextArea();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -118,16 +147,26 @@ public class AyudaViajero extends javax.swing.JFrame {
             }
         });
 
+        label1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         label1.setText("Más información sobre los lugares");
 
-        jLabel1.setText("Seleccione un lugar");
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setText("Seleccione un lugar ");
 
-        jComboBox1.setModel(jComboBox1.getModel());
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+        Lugares.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                LugaresItemStateChanged(evt);
             }
         });
+        Lugares.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LugaresActionPerformed(evt);
+            }
+        });
+
+        mostrar.setColumns(20);
+        mostrar.setRows(5);
+        jScrollPane1.setViewportView(mostrar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -136,21 +175,23 @@ public class AyudaViajero extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(419, 419, 419)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 183, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(324, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(291, 291, 291))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Lugares, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 467, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(141, 141, 141))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(81, 81, 81)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -160,11 +201,13 @@ public class AyudaViajero extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(103, 103, 103)
+                .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 507, Short.MAX_VALUE)
+                    .addComponent(Lugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(41, 41, 41))
         );
@@ -184,35 +227,85 @@ public class AyudaViajero extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1MouseClicked
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void LugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LugaresActionPerformed
    
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_LugaresActionPerformed
+
+    private void LugaresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LugaresItemStateChanged
+        // TODO add your handling code here:
+        String lugar = (String)Lugares.getSelectedItem();
+        
+        if (lugar.equals("Alajuelita"))
+          mostrar.setText("Habitantes:\n" +"-12,875 \nLugares interés:\n" + "-Cruz de Alajuelita\n" + "-La Piedra del Minero \nComidas:\n" + "-Restaurante Mirador America\n" +
+          "-La cabaña de Toño \nGasolineras:\n" + "-ANATOTC S.A\n" + "-Servicentro J.S.M Alajuelita" );
+
+        if (lugar.equals("San Pedro"))
+            mostrar.setText("Habitantes:\n" +"-23,977 \nLugares interés:\n" + "-UCR\n" + "-Outlet Mall  \nComidas:\n" + "-Chill&Go´s\n" + "-La Pataconería \nGasolineras:\n" +
+            "-Servicentro el Higuerón\n" + "-Bomba San Pedro" );
+
+        if (lugar.equals("Barbacoas"))
+            mostrar.setText("Habitantes:\n" +"-3692 \nLugares interés:\n" + "-Mirador al Golfo de Nicoya\n" + "-Finca la Alejandría \nComidas:\n" + "-Bar Karibu\n" + 
+            "-Donde Perola Puriscal \nGasolineras:\n" + "-No posee" );
+
+        if (lugar.equals("Tibás"))
+            mostrar.setText("Habitantes:\n" +"-82,216 \nLugares interés:\n" + "-Plaza Deportes Jardines \n" + "-Hospital UNIBE \nComidas:\n" + "-Monster Pizza\n" +
+            "-KFC \nGasolineras:\n" + "-Delta Los Colegios \n" + "-Delta Tibás" );
+
+        if (lugar.equals("Sabanilla"))
+            mostrar.setText("Habitantes:\n" +"-10,775 \nLugares interés:\n" + "-Parque de Sabanilla\n" + "-Mall San Pedro \nComidas:\n" + "-Pizza Varel\n" + 
+            "-McDonald´s Sabanilla \nGasolineras:\n" + "-No posee" );
+        
+        if (lugar.equals("Desamparados"))
+            mostrar.setText("Habitantes:\n" +"-33,866 \nLugares interés:\n" + "-Multicentro Desamparados Mall\n" + "-Estadio Cuty Monge \nComidas:\n" + "-Sosa San Lorenzo\n" + 
+            "-Soda Yoguis \nGasolineras:\n" + "-Metrópoli Gas LP\n" + "-Blueflame" );
+        
+        if (lugar.equals("Curridabat"))
+            mostrar.setText("Habitantes:\n" +"-28,817 \nLugares interés:\n" + "-Cinemark\n" + "-Parque Guayabos \nComidas:\n" + "-Ramen Saki\n" +
+            "-Los Parales \nGasolineras:\n" + "-La Galera\n" + "-Gasolinera y Gas LP El Ranchito" );
+        
+        if (lugar.equals("Aserrí"))
+            mostrar.setText("Habitantes:\n" +"-28,191 \nLugares interés:\n" + "-Parque Acuático Los Sueños\n" + "-Parque de Aserrí \nComidas:\n" + "-Chicharronera Cacique Acserí\n" +
+            "-Papa John's Pizza \nGasolineras:\n" + "-Gasolinera Trova\n" + "-Gasotica Aserrí" );
+        
+        if (lugar.equals("Santiago"))
+            mostrar.setText("Habitantes:\n" +"-11,512 \nLugares interés:\n" + "-Parque del Agricultor" + "-Kamakiri Centro Recreativo \nComidas:\n" + "-Pops\n" +
+            "-Heladería y Soda Caprichos \nGasolineras:\n" + "-Delta Puriscal\n" + "-Estación de Servicio San Juan" );
+        
+        if (lugar.equals("Hatillo"))
+            mostrar.setText("Habitantes:\n" +"-50,511 \nLugares interés:\n" + "-Centro Comercial Plaza América " + "-Alpízar's Sport Center \nComidas:\n" + "-Pizza Hut\n" + 
+            "-Burger King \nGasolineras:\n" + "-Lavacar las Américas\n" + "-UNO" );
+        
+        if (lugar.equals("Santa Ana"))
+            mostrar.setText("Habitantes:\n" +"-60,453 \nLugares interés:\n" + "-Hacienda La Chimba\n " + "-Santa Ana Town Center \nComidas:\n" + "-McDonald’s\n" +
+            "-Andiamo Là \nGasolineras:\n" + "-Gasolinera Montes\n" + "-Gasolinera Lindora y Gas Lp" );
+        
+        if (lugar.equals("Guadalupe"))
+            mostrar.setText("Habitantes:\n" +"-20,663 \nLugares interés:\n" + "-Estadio José Joaquín “Colleya” Fonseca\n " + "-Parque Santiago Jara \nComidas:\n" + 
+            "-Restaurante Copa de Oro\n" + "-Koralitos Marisquería  \nGasolineras:\n" + "-Gasolinera uno\n" + "-Montilermar Gasolinera" );
+        
+        if (lugar.equals("Ciudad Colón"))
+            mostrar.setText("Habitantes:\n" +"-16,088 \nLugares interés:\n" + "-Los pochotes\n " + "-Waterfall Ciudad Colón \nComidas:\n" + "-Restaurante conservatorium\n" +
+            "-Antojitos de Villa  \nGasolineras:\n" + "-Delta Mora\n" + "-Servicentro los Ángeles" );
+        
+        if (lugar.equals("Moravia"))
+            mostrar.setText("Habitantes:\n" +"-61,148 \nLugares interés:\n" + "-Lincoln Plaza\n " + "-Parque de San Jerónimo \nComidas:\n" + "-Antojos de montaña\n" +
+            "-Sabor de Maco  \nGasolineras:\n" + "-Llantera Surtimax\n" + "-Estación de servicio, servicentro Moravia" );
+        
+        if (lugar.equals("Escazú"))
+            mostrar.setText("Habitantes:\n" +"56,509 \nLugares interés:\n" + "-Mirador Escondido\n " + "-Parque de Bello Horizonte \nComidas:\n" + "-La Casona De Laly\n" +
+            "-La Posada de las Brujas  \nGasolineras:\n" + "No posee" );
+        
+        if (lugar.equals("Seleccione un lugar"))
+            mostrar.setText("");
+        
+        
+        
+    }//GEN-LAST:event_LugaresItemStateChanged
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-       ArrayList<String> array = new ArrayList<String>();
-        array.add("Escazú");
-        array.add("Moravia");
-        array.add("Ciudad Colón");
-        array.add("Guadalupe");
-        array.add("Santa Ana");
-        array.add("Hatillo");
-        array.add("Santiago");
-        array.add("Aserrí");
-        array.add("Barbacoas");
-        array.add("San Pedro");
-        array.add("Alajuellita");
-        array.add("Tibás");
-        array.add("Sabanilla");
-        array.add("Desamparados");
-        array.add("Curridabat");
-        
-        Collections.sort(array);
-        for (String item: array){
-          System.out.println(item);  
-        }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -222,11 +315,11 @@ public class AyudaViajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Lugares;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -235,6 +328,7 @@ public class AyudaViajero extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private java.awt.Label label1;
     private java.awt.Menu menu1;
@@ -243,6 +337,7 @@ public class AyudaViajero extends javax.swing.JFrame {
     private java.awt.Menu menu4;
     private java.awt.MenuBar menuBar1;
     private java.awt.MenuBar menuBar2;
+    private javax.swing.JTextArea mostrar;
     private java.awt.PopupMenu popupMenu1;
     private java.awt.PopupMenu popupMenu2;
     private java.awt.PopupMenu popupMenu3;
