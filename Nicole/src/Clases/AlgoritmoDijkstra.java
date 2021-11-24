@@ -1,6 +1,7 @@
 package Clases;
 
-//import static Ventanas.Inicio.PintarFiguras;
+import static path.mainWindow.PintarFiguras;
+import static path.mainWindow.jPanel1;
 import java.awt.Color;
 
 /**
@@ -36,7 +37,7 @@ public class AlgoritmoDijkstra {///
         return nodo[nodoFinal].getNombre();
     }
 
-   /* public void dijkstra() {
+    public void dijkstra() {
         for (int i = 0; i < tope; i++) // creacion del vector nodo del tamaño del numero de nodos pintados 
         {
             nodo[i] = new Nodo();
@@ -104,6 +105,6 @@ public class AlgoritmoDijkstra {///
                     arboles.getCordeX(nodoFinal), 
                     arboles.getCordeY(nodoFinal), null, Color.RED);//Pintando Nodo del destino
         
-    }*/
+    }
 
 }

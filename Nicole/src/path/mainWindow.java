@@ -488,6 +488,4 @@ public class mainWindow extends javax.swing.JFrame {
     private javax.swing.JTextArea txt;
     // End of variables declaration//GEN-END:variables
   
-}///hy  getWidth()
-
-
+}
