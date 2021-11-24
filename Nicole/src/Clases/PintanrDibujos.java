@@ -9,7 +9,7 @@ import java.awt.RenderingHints;
 
 /**
  *
- * @author Jose H Elelfff
+ * @author 
  */
 public class PintanrDibujos {
 
