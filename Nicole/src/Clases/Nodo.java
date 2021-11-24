@@ -10,7 +10,7 @@ public class Nodo {
    private boolean etiqueta;
    private double acumulado; // lleva el acoulado de cada nodo
    private Nodo Predecesor;
-   ///
+   /////
    public Nodo(){
        this.nombre =-1;
        this.visitado = false;

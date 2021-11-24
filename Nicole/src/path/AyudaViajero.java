@@ -13,7 +13,7 @@ import java.util.List;
 import path.mainWindow;
 
 /**
- *jj
+ *jjmmm
  * @author Usuario
  */
 public class AyudaViajero extends javax.swing.JFrame {
