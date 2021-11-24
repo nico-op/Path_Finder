@@ -1,17 +1,39 @@
 
 package path;
 //
+import Clases.AlgoritmoDijkstra;
+import Clases.DatosGraficos;
+import Clases.PintanrDibujos;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 ///////////ffff/
 
 public class mainWindow extends javax.swing.JFrame {
     
-    backgroundPanel background = new backgroundPanel();
     //Holaaaaa, esto sirve??
+     private int Numerotope = 0;//Numero de nodos 
+    
+    DatosGraficos arboles = new DatosGraficos();
+
+    public static void PintarFiguras(int tope, DatosGraficos arboles) {//pinta lo q esta antes en el panel 
+        for (int j = 0; j < tope; j++) {
+            for (int k = 0; k < tope; k++) {
+                if (arboles.getmAdyacencia(j, k) == 1) {
+                    PintanrDibujos.pinta_Linea(jPanel1.getGraphics(), arboles.getCordeX(j), arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k), arboles.getmCoeficiente(j, k));
+                }
+            }
+        }
+        for (int j = 0; j < tope; j++) {
+            PintanrDibujos.pinta_Circulo(jPanel1.getGraphics(), arboles.getCordeX(j), arboles.getCordeY(j), arboles.getNombre(j));
+        }
+
+    }
     
    
 
@@ -20,8 +42,10 @@ public class mainWindow extends javax.swing.JFrame {
      */
     public mainWindow() {
         
-        this.setContentPane(background);
         initComponents();
+        Destiny.setEnabled(true);
+        Origin.setEnabled(true);
+        buscar.setEnabled(false);
     }
 
     /**
@@ -36,12 +60,14 @@ public class mainWindow extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         labelOrigen = new javax.swing.JLabel();
         labelDestiny = new javax.swing.JLabel();
-        buttonSend = new javax.swing.JButton();
+        buscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Origin = new javax.swing.JComboBox<>();
         Destiny = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        MostrarCamino = new javax.swing.JButton();
+        Mostrar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txt = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,17 +80,17 @@ public class mainWindow extends javax.swing.JFrame {
 
         labelDestiny.setText("Destiny");
 
-        buttonSend.setText("Consult");
-        buttonSend.addActionListener(new java.awt.event.ActionListener() {
+        buscar.setText("Consult");
+        buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonSendActionPerformed(evt);
+                buscarActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("La mejor ruta es:");
 
-        Origin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Curridabat", "Desamparados", "Escazú", "Guadalupe", "Hatillo", "Moravia", "Sabanilla", "San Pedro", "Santa Ana", "Santiago", "Tibás", " " }));
+        Origin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Curridabat", "Desamparados", "Escazú", "Guadalupe", "Hatillo", "Moravia", "Sabanilla", "San Pedro", "Santa Ana", "Santiago", "Tibás", "" }));
         Origin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OriginActionPerformed(evt);
@@ -85,7 +111,16 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        MostrarCamino.setText("Buscar Camino");
+        Mostrar.setText("Buscar Camino");
+        Mostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MostrarActionPerformed(evt);
+            }
+        });
+
+        txt.setColumns(20);
+        txt.setRows(5);
+        jScrollPane1.setViewportView(txt);
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -103,13 +138,15 @@ public class mainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Destiny, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buttonSend, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(147, 147, 147))
+                .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(MostrarCamino)
+                .addComponent(Mostrar)
                 .addGap(169, 169, 169)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -119,7 +156,7 @@ public class mainWindow extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                         .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(labelOrigen)
                             .addComponent(Origin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -131,12 +168,14 @@ public class mainWindow extends javax.swing.JFrame {
                     .addGroup(jPanelLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MostrarCamino)
+                .addComponent(Mostrar)
                 .addGap(22, 22, 22)
-                .addComponent(buttonSend)
+                .addComponent(buscar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -167,21 +206,225 @@ public class mainWindow extends javax.swing.JFrame {
                 .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.getAccessibleContext().setAccessibleName(getName());
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSendActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_buttonSendActionPerformed
+     private void MostrarCaminosActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        //jMenuItem2.setEnabled(false);
+        Origin.setEnabled(true);
+        Mostrar.setEnabled(false);
+        Mostrar.setVisible(false);
+        txt.setEnabled(false);
+
+        jPanel1.paint(jPanel1.getGraphics());
+        
+        int Matriz[][] = {
+            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0},
+            {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0},
+            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+        };
+
+        double coe[][] = {
+            {0, 57.4, 0, 0, 147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {57.4, 0, 0, 0, 0, 69.1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 55.6, 0, 0, 0, 0, 0, 0, 26.4, 0, 0, 85.1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71.8, 0, 0, 0, 0, 0, 0, 0, 0, 26},
+            {147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 327.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 69.1, 0, 0, 0, 0, 0, 0, 93.3, 0, 0, 86.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71.3},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 158, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 61.7, 0, 0, 0, 0, 0, 0, 42.7, 0, 85.5, 0, 95.3, 0, 0},
+            {0, 0, 55.6, 0, 0, 93.3, 0, 61.7, 0, 0, 0, 0, 0, 0, 0, 45.7, 0, 82.3, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 109, 0, 0, 0, 86, 0},
+            {0, 0, 0, 0, 327.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 116.7},
+            {0, 0, 0, 0, 0, 86.5, 0, 0, 0, 0, 0, 0, 56.1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 71.8, 0, 0, 0, 0, 0, 0, 0, 56.1, 0, 0, 0, 0, 0, 70.5, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9, 0, 50.6, 0, 76.3, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9, 0, 0, 0, 0, 0, 54.9, 0, 0},
+            {0, 0, 26, 0, 0, 0, 0, 42.7, 45.7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 109, 0, 0, 0, 50.6, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 85.5, 82.3, 0, 0, 0, 70.5, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 85.1, 0, 0, 0, 158, 0, 0, 0, 0, 0, 0, 76.3, 0, 0, 0, 0, 0, 0, 53.7, 0},
+            {0, 0, 0, 0, 0, 0, 0, 95.3, 0, 0, 0, 0, 0, 0, 54.9, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 53.7, 0, 0, 0},
+            {0, 0, 0, 26, 0, 71.3, 0, 0, 0, 0, 116.7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},};
+
+        int xx1[] = {425, 375, 280, 540, 440, 425, 275, 260, 350, 170, 600, 450, 470, 160, 140, 315, 110, 375, 220, 190, 200, 525, 400};
+        int yy1[] = {405, 485, 540, 550, 185, 530, 430, 630, 550, 370, 425, 550, 615, 520, 585, 565, 480, 630, 535, 605, 510, 485, 400};
+        String nom[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"};
+      
+        for (int j = 0; j < 22; j++) {
+            arboles.setCordeX(j, xx1[j]);
+            arboles.setCordeY(j, yy1[j]);
+            arboles.setNombre(j, nom[j]);
+
+        }
+        for (int j = 0; j < 22; j++) {
+            for (int k = 0; k < 22; k++) {
+                arboles.setmAdyacencia(j, k, Matriz[j][k]);
+                arboles.setmCoeficiente(j, k, coe[j][k]);
+            }
+        }
+        Numerotope = 22;
+        PintarFiguras(Numerotope, arboles);
+    } 
+     
+    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+        int origen = 0, destino = 0;
+        String nombreOrigen, nombreDestino;
+        nombreOrigen = (String) Origin.getSelectedItem();
+        nombreDestino = (String) Destiny.getSelectedItem();
+        
+        if ("Barbacoas".equals(nombreOrigen)) {
+            origen = 0;
+        }
+        if ("Santiago".equals(nombreOrigen)) {
+            origen = 1;
+        }
+        if ("Aserrí".equals(nombreOrigen)) {
+            origen = 2;
+        }
+        if ("Ciudad Colón".equals(nombreOrigen)) {
+            origen = 3;
+        }
+        if ("Santa Ana".equals(nombreOrigen)) {
+            origen = 4;
+        }
+        if ("Escazú".equals(nombreOrigen)) {
+            origen = 5;
+        }
+        if ("Guadalupe".equals(nombreOrigen)) {
+            origen = 6;
+        }
+        if ("Moravia".equals(nombreOrigen)) {
+            origen = 7;
+        }
+        if ("Tibás".equals(nombreOrigen)) {
+            origen = 8;
+        }
+        if ("Alajuelita".equals(nombreOrigen)) {
+            origen = 9;
+        }
+        if ("Hatillo".equals(nombreOrigen)) {
+            origen = 10;
+        }
+        if ("Curridabat".equals(nombreOrigen)) {
+            origen = 11;
+        }
+        if ("San Pedro".equals(nombreOrigen)) {
+            origen = 12;
+        }
+        if ("Sabanilla".equals(nombreOrigen)) {
+            origen = 13;
+        }
+        if ("Desamparados".equals(nombreOrigen)) {
+            origen = 14;
+        }
+        if ("San Antonio".equals(nombreOrigen)) {
+            origen = 15;
+        }
+        
+// Destinos 
+         if ("Barbacoas".equals(nombreDestino)) {
+            origen = 0;
+        }
+        if ("Santiago".equals(nombreDestino)) {
+            origen = 1;
+        }
+        if ("Aserrí".equals(nombreDestino)) {
+            origen = 2;
+        }
+        if ("Ciudad Colón".equals(nombreDestino)) {
+            origen = 3;
+        }
+        if ("Santa Ana".equals(nombreDestino)) {
+            origen = 4;
+        }
+        if ("Escazú".equals(nombreDestino)) {
+            origen = 5;
+        }
+        if ("Guadalupe".equals(nombreDestino)) {
+            origen = 6;
+        }
+        if ("Moravia".equals(nombreDestino)) {
+            origen = 7;
+        }
+        if ("Tibás".equals(nombreDestino)) {
+            origen = 8;
+        }
+        if ("Alajuelita".equals(nombreDestino)) {
+            origen = 9;
+        }
+        if ("Hatillo".equals(nombreDestino)) {
+            origen = 10;
+        }
+        if ("Curridabat".equals(nombreDestino)) {
+            origen = 11;
+        }
+        if ("San Pedro".equals(nombreDestino)) {
+            origen = 12;
+        }
+        if ("Sabanilla".equals(nombreDestino)) {
+            origen = 13;
+        }
+        if ("Desamparados".equals(nombreDestino)) {
+            origen = 14;
+        }
+        if ("San Antonio".equals(nombreDestino)) {
+            origen = 15;
+        }
+        
+        
+        
+        if (origen == destino) {
+            Font fuente = new Font("Arial", Font.BOLD, 18);
+            txt.setFont(fuente);
+            JOptionPane.showMessageDialog(null, "Estas en:" + nombreOrigen);
+            txt.setText("Intenta de nuevo!!");
+            txt.setEnabled(false);
+            txt.setForeground(Color.RED);
+
+        } else {
+            AlgoritmoDijkstra Dijkstra = new AlgoritmoDijkstra(arboles, Numerotope, origen, destino);
+            Dijkstra.dijkstra();
+
+            Font fuente = new Font("Arial", Font.BOLD, 18);
+            txt.setFont(fuente);
+            txt.setText("No hay ningun error :)");
+            txt.setForeground(Color.BLUE);
+            txt.setEnabled(false);
+            
+            //kmRecorridos.setText(Dijkstra.getAcumulado() + " KM");
+        }
+    }//GEN-LAST:event_buscarActionPerformed
 
     private void OriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OriginActionPerformed
-        String origin = Origin.getSelectedItem().toString();
-        System.out.println("Origen: " + origin);
+        Destiny.setEnabled(true);
     }//GEN-LAST:event_OriginActionPerformed
 
     private void DestinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinyActionPerformed
-        String destiny = Destiny.getSelectedItem().toString();
-        System.out.println("Destino: " + destiny);
+        buscar.setEnabled(true);
+        
     }//GEN-LAST:event_DestinyActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -189,6 +432,10 @@ public class mainWindow extends javax.swing.JFrame {
         ayuda.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MostrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,7 +465,7 @@ public class mainWindow extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new mainWindow().setVisible(true);
@@ -228,31 +475,19 @@ public class mainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JComboBox<String> Destiny;
-    private javax.swing.JButton MostrarCamino;
+    private javax.swing.JButton Mostrar;
     public static javax.swing.JComboBox<String> Origin;
-    private javax.swing.JButton buttonSend;
+    private javax.swing.JButton buscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel;
-    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel labelDestiny;
     private javax.swing.JLabel labelOrigen;
+    private javax.swing.JTextArea txt;
     // End of variables declaration//GEN-END:variables
-
-class backgroundPanel extends JPanel{
-    private Image image;
-    
-    @Override
-    public void paint(Graphics g){
-        image = new ImageIcon(getClass().getResource("/path/mapa_sanjose.png")).getImage();
-        g.drawImage(image, 0, 0, 690, 400, rootPane);
-        setOpaque(false);
-        super.paint(g);
-    }
-    
-     
-}
-    
+  
 }///hy  getWidth()
 
 
