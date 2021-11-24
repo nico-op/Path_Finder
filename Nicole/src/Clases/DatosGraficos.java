@@ -11,7 +11,7 @@ public class DatosGraficos {
 
     /**
      *
-     * @author Jose H Elelfff
+     * @author 
      */
     public DatosGraficos() {
 

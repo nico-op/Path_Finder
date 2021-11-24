@@ -5,7 +5,7 @@ import java.awt.Color;
 
 /**
  *
- * @author Jose H Elel
+ * @author 
  */
 public class AlgoritmoDijkstra {///
 ///

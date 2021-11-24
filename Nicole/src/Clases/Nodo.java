@@ -2,7 +2,7 @@ package Clases;
 
 /**
  *
- * @author Jose H Elel
+ * @author 
  *////
 public class Nodo {    
    private  int nombre ;
