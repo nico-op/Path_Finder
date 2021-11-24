@@ -230,7 +230,7 @@ class backgroundPanel extends JPanel{
     @Override
     public void paint(Graphics g){
         image = new ImageIcon(getClass().getResource("/path/mapa_sanjose.png")).getImage();
-        g.drawImage(image, 0, 0, getWidth(), 500, rootPane);
+        g.drawImage(image, 0, 0, 690, 400, rootPane);
         setOpaque(false);
         super.paint(g);
     }
@@ -238,6 +238,6 @@ class backgroundPanel extends JPanel{
      
 }
     
-}///hy
+}///hy  getWidth()
 
 
