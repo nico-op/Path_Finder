@@ -9,7 +9,7 @@ import java.awt.RenderingHints;
 
 /**
  *
- * @author Jose H77 Eleljjm
+ * @author Jose H Elel
  */
 public class PintanrDibujos {
 

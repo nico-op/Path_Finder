@@ -6,7 +6,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-////////////jj
+////////////
 
 public class mainWindow extends javax.swing.JFrame {
     
