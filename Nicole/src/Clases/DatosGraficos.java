@@ -1,6 +1,6 @@
 package Clases;
 
-public class DatosGraficos {
+public class DatosGraficos {//
 
     private final double MatrizCoeficiente[][] = new double[51][51];
     private final int MatrizAdyacencia[][] = new int[51][51];

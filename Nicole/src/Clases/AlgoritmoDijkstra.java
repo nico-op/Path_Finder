@@ -1,7 +1,6 @@
 package Clases;
 
-import static Ventanas.Inicio.PintarFiguras;
-import static path.mainWindow;
+//import static Ventanas.Inicio.PintarFiguras;
 import java.awt.Color;
 
 /**
