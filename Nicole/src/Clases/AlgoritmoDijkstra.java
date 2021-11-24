@@ -1,7 +1,6 @@
 package Clases;
 
-import static Ventanas.Inicio.PintarFiguras;
-import static path.mainWindow;
+//import static Ventanas.Inicio.PintarFiguras;
 import java.awt.Color;
 
 /**
@@ -9,7 +8,7 @@ import java.awt.Color;
  * @author Jose H Elel
  */
 public class AlgoritmoDijkstra {
-
+///
     private final DatosGraficos arboles;
     private int subTope;
     private Nodo Nodoauxiliar = null;
