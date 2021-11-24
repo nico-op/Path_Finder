@@ -10,7 +10,7 @@ import Clases.PintanrDibujos;
 //import static Ventanas.Inicio.jPanel1;
 /**
  *
- * @author Jose H Elel
+ * @author Jose H Elelff
  */
 public class MostrarDibujos {
     private int tope=0;// lleva el # de nodos creado 

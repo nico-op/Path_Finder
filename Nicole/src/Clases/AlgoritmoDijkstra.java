@@ -7,7 +7,7 @@ import java.awt.Color;
  *
  * @author Jose H Elel
  */
-public class AlgoritmoDijkstra {
+public class AlgoritmoDijkstra {///
 ///
     private final DatosGraficos arboles;
     private int subTope;
