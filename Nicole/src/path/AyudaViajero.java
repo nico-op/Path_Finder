@@ -22,11 +22,11 @@ public class AyudaViajero extends javax.swing.JFrame {
         List cities = new LinkedList<>();
         
         cities.add("Dota");
+        cities.add("Aserrí");
         cities.add("Barbacoas");
         cities.add("Hatillo");
         cities.add("Santa Ana");
         cities.add("Santiago");
-        cities.add("San Antonio");
         cities.add("Vázquez de Coronado");
         cities.add("Desamparados");
         cities.add("Tarrazu");
