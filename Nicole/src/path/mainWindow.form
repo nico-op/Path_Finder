@@ -52,7 +52,7 @@
                       <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                       <Component id="jPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="28" max="32767" attributes="0"/>
                   </Group>
@@ -128,7 +128,7 @@
                               <Component id="Origin" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelOrigen" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="26" max="32767" attributes="0"/>
+                          <EmptySpace pref="28" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelDestiny" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Destiny" alignment="3" min="-2" max="-2" attributes="0"/>
