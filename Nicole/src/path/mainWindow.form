@@ -35,7 +35,10 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel" max="32767" attributes="0"/>
-                  <Component id="jLabel2" pref="783" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -43,20 +46,16 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Component id="jLabel2" min="-2" pref="633" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="jPanel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="207" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jLabel2" min="-2" pref="631" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -73,24 +72,18 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="labelOrigen" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                  <Component id="Origin" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="labelDestiny" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="Destiny" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="labelOrigen" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                          <Component id="Origin" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                          <Component id="labelDestiny" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Destiny" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="buscar" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -128,7 +121,7 @@
                               <Component id="Origin" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="labelOrigen" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="28" max="32767" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="labelDestiny" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="Destiny" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -185,18 +178,18 @@
                 <StringItem index="2" value="Aserr&#xed;"/>
                 <StringItem index="3" value="Barbacoas"/>
                 <StringItem index="4" value="Ciudad Col&#xf3;n"/>
-                <StringItem index="5" value="Curridabat"/>
+                <StringItem index="5" value="Dota"/>
                 <StringItem index="6" value="Desamparados"/>
                 <StringItem index="7" value="Escaz&#xfa;"/>
-                <StringItem index="8" value="Guadalupe"/>
+                <StringItem index="8" value="Turrubares"/>
                 <StringItem index="9" value="Hatillo"/>
-                <StringItem index="10" value="Moravia"/>
-                <StringItem index="11" value="Sabanilla"/>
-                <StringItem index="12" value="San Pedro"/>
+                <StringItem index="10" value="P&#xe9;rez Zeled&#xf3;n"/>
+                <StringItem index="11" value="V&#xe1;zquez de Coronado"/>
+                <StringItem index="12" value="Tarrazu "/>
                 <StringItem index="13" value="Santa Ana"/>
                 <StringItem index="14" value="Santiago"/>
-                <StringItem index="15" value="Tib&#xe1;s"/>
-                <StringItem index="16" value=""/>
+                <StringItem index="15" value="Acosta"/>
+                <StringItem index="16" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -211,24 +204,23 @@
         <Component class="javax.swing.JComboBox" name="Destiny">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="17">
+              <StringArray count="16">
                 <StringItem index="0" value="None"/>
                 <StringItem index="1" value="Alajuelita"/>
                 <StringItem index="2" value="Aserr&#xed;"/>
                 <StringItem index="3" value="Barbacoas"/>
                 <StringItem index="4" value="Ciudad Col&#xf3;n"/>
-                <StringItem index="5" value="Curridabat"/>
+                <StringItem index="5" value="Dota"/>
                 <StringItem index="6" value="Desamparados"/>
                 <StringItem index="7" value="Escaz&#xfa;"/>
-                <StringItem index="8" value="Guadalupe"/>
+                <StringItem index="8" value="Turrubares"/>
                 <StringItem index="9" value="Hatillo"/>
-                <StringItem index="10" value="Moravia"/>
-                <StringItem index="11" value="Sabanilla"/>
-                <StringItem index="12" value="San Pedro"/>
+                <StringItem index="10" value="P&#xe9;rez Zeled&#xf3;n"/>
+                <StringItem index="11" value="V&#xe1;zquez de Coronado"/>
+                <StringItem index="12" value="Tarrazu "/>
                 <StringItem index="13" value="Santa Ana"/>
                 <StringItem index="14" value="Santiago"/>
-                <StringItem index="15" value="Tib&#xe1;s"/>
-                <StringItem index="16" value=" "/>
+                <StringItem index="15" value="Acosta"/>
               </StringArray>
             </Property>
           </Properties>

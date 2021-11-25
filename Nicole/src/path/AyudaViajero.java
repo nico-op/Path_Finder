@@ -21,21 +21,21 @@ public class AyudaViajero extends javax.swing.JFrame {
         initComponents();
         List cities = new LinkedList<>();
         
-        cities.add("Curridabat");
+        cities.add("Dota");
         cities.add("Barbacoas");
         cities.add("Hatillo");
         cities.add("Santa Ana");
         cities.add("Santiago");
         cities.add("San Antonio");
-        cities.add("Sabanilla");
+        cities.add("Vázquez de Coronado");
         cities.add("Desamparados");
-        cities.add("San Pedro");
+        cities.add("Tarrazu");
         cities.add("Alajuelita");
-        cities.add("Tibás");
+        cities.add("Acosta");
         cities.add("Escazú");
-        cities.add("Moravia");
+        cities.add("Pérez Zeledón");
         cities.add("Ciudad Colón");
-        cities.add("Guadalupe");
+        cities.add("Turrubares");
        //hola
         
         
@@ -163,6 +163,7 @@ public class AyudaViajero extends javax.swing.JFrame {
         });
 
         mostrar.setColumns(20);
+        mostrar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         mostrar.setRows(5);
         jScrollPane1.setViewportView(mostrar);
 
@@ -204,8 +205,8 @@ public class AyudaViajero extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(Lugares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(41, 41, 41))
         );
@@ -234,64 +235,64 @@ public class AyudaViajero extends javax.swing.JFrame {
         String lugar = (String)Lugares.getSelectedItem();
         
         if (lugar.equals("Alajuelita"))
-          mostrar.setText("Habitantes:\n" +"-12,875 \nLugares interés:\n" + "-Cruz de Alajuelita\n" + "-La Piedra del Minero \nComidas:\n" + "-Restaurante Mirador America\n" +
-          "-La cabaña de Toño \nGasolineras:\n" + "-ANATOTC S.A\n" + "-Servicentro J.S.M Alajuelita" );
+          mostrar.setText("Habitantes:\n" +"-12,875 \n\nLugares interés:\n" + "-Cruz de Alajuelita\n" + "-La Piedra del Minero \n\nComidas:\n" + "-Restaurante Mirador America\n" +
+          "-La cabaña de Toño \n\nGasolineras:\n" + "-ANATOTC S.A\n" + "-Servicentro J.S.M Alajuelita" );
 
-        if (lugar.equals("San Pedro"))
-            mostrar.setText("Habitantes:\n" +"-23,977 \nLugares interés:\n" + "-UCR\n" + "-Outlet Mall  \nComidas:\n" + "-Chill&Go´s\n" + "-La Pataconería \nGasolineras:\n" +
-            "-Servicentro el Higuerón\n" + "-Bomba San Pedro" );
+        if (lugar.equals("Tarrazu"))
+            mostrar.setText("Habitantes:\n" +"-16,280 \n\nLugares interés:\n" + "-Finca las Lomas\n" + "-Cerro la Trinidad  \n\nComidas:\n" + "-Vista del Lago Coffee Tour\n" + "-Lagos Los Angeles  \n\nGasolineras:\n" +
+            "-Estación de Servicio el Cruce" );
 
         if (lugar.equals("Barbacoas"))
-            mostrar.setText("Habitantes:\n" +"-3692 \nLugares interés:\n" + "-Mirador al Golfo de Nicoya\n" + "-Finca la Alejandría \nComidas:\n" + "-Bar Karibu\n" + 
-            "-Donde Perola Puriscal \nGasolineras:\n" + "-No posee" );
+            mostrar.setText("Habitantes:\n" +"-3692 \n\nLugares interés:\n" + "-Mirador al Golfo de Nicoya\n" + "-Finca la Alejandría \n\nComidas:\n" + "-Bar Karibu\n" + 
+            "-Donde Perola Puriscal \n\nGasolineras:\n" + "-No posee" );
 
-        if (lugar.equals("Tibás"))
-            mostrar.setText("Habitantes:\n" +"-82,216 \nLugares interés:\n" + "-Plaza Deportes Jardines \n" + "-Hospital UNIBE \nComidas:\n" + "-Monster Pizza\n" +
-            "-KFC \nGasolineras:\n" + "-Delta Los Colegios \n" + "-Delta Tibás" );
+        if (lugar.equals("Acosta"))
+            mostrar.setText("Habitantes:\n" +"-21,335 \n\nLugares interés:\n" + "-Pamaguelos Acosta\n" + "-Unifami Centro Comercial \n\nComidas:\n" + "-Restaurante Los Pozos\n" +
+            "-Cafetería El 7 de cada mes \n\nGasolineras:\n" + "-Multiservicios La Rampa");
 
-        if (lugar.equals("Sabanilla"))
-            mostrar.setText("Habitantes:\n" +"-10,775 \nLugares interés:\n" + "-Parque de Sabanilla\n" + "-Mall San Pedro \nComidas:\n" + "-Pizza Varel\n" + 
-            "-McDonald´s Sabanilla \nGasolineras:\n" + "-No posee" );
+        if (lugar.equals("Vázques de Coronado"))
+            mostrar.setText("Habitantes:\n" +"-60,486 \n\nLugares interés:\n" + "-Instituto de Clodomiro Picado\n" + "-Iglesia San Pedro de Coronado \n\nComidas:\n" + "-Restaurante entre Nubes\n" + 
+            "-La Cabaña de Cascajal \n\nGasolineras:\n" + "-Servicentro El Trapiche S.A\n" + "-Bomba Combustibles De Coronado Ltda" );
         
         if (lugar.equals("Desamparados"))
-            mostrar.setText("Habitantes:\n" +"-33,866 \nLugares interés:\n" + "-Multicentro Desamparados Mall\n" + "-Estadio Cuty Monge \nComidas:\n" + "-Sosa San Lorenzo\n" + 
-            "-Soda Yoguis \nGasolineras:\n" + "-Metrópoli Gas LP\n" + "-Blueflame" );
+            mostrar.setText("Habitantes:\n" +"-33,866 \n\nLugares interés:\n" + "-Multicentro Desamparados Mall\n" + "-Estadio Cuty Monge \n\nComidas:\n" + "-Sosa San Lorenzo\n" + 
+            "-Soda Yoguis \n\nGasolineras:\n" + "-Metrópoli Gas LP\n" + "-Blueflame" );
         
-        if (lugar.equals("Curridabat"))
-            mostrar.setText("Habitantes:\n" +"-28,817 \nLugares interés:\n" + "-Cinemark\n" + "-Parque Guayabos \nComidas:\n" + "-Ramen Saki\n" +
-            "-Los Parales \nGasolineras:\n" + "-La Galera\n" + "-Gasolinera y Gas LP El Ranchito" );
+        if (lugar.equals("Dota"))
+            mostrar.setText("Habitantes:\n" +"-6948 \n\nLugares interés:\n" + "-Parque Nacional los Quetzales\n" + "-Reserva Biológica Cerro Vueltas \n\nComidas:\n" + "-Bar y Restaurante La Catarata\n" +
+            "-Miriam`s Quetzals \n\nGasolineras:\n" + "-Estación de Servicios Santa María");
         
         if (lugar.equals("Aserrí"))
-            mostrar.setText("Habitantes:\n" +"-28,191 \nLugares interés:\n" + "-Parque Acuático Los Sueños\n" + "-Parque de Aserrí \nComidas:\n" + "-Chicharronera Cacique Acserí\n" +
-            "-Papa John's Pizza \nGasolineras:\n" + "-Gasolinera Trova\n" + "-Gasotica Aserrí" );
+            mostrar.setText("Habitantes:\n" +"-28,191 \n\nLugares interés:\n" + "-Parque Acuático Los Sueños\n" + "-Parque de Aserrí \n\nComidas:\n" + "-Chicharronera Cacique Acserí\n" +
+            "-Papa John's Pizza \n\nGasolineras:\n" + "-Gasolinera Trova\n" + "-Gasotica Aserrí" );
         
         if (lugar.equals("Santiago"))
-            mostrar.setText("Habitantes:\n" +"-11,512 \nLugares interés:\n" + "-Parque del Agricultor" + "-Kamakiri Centro Recreativo \nComidas:\n" + "-Pops\n" +
-            "-Heladería y Soda Caprichos \nGasolineras:\n" + "-Delta Puriscal\n" + "-Estación de Servicio San Juan" );
+            mostrar.setText("Habitantes:\n" +"-11,512 \n\nLugares interés:\n" + "-Parque del Agricultor\n" + "-Kamakiri Centro Recreativo \n\nComidas:\n" + "-Pops\n" +
+            "-Heladería y Soda Caprichos \n\nGasolineras:\n" + "-Delta Puriscal\n" + "-Estación de Servicio San Juan" );
         
         if (lugar.equals("Hatillo"))
-            mostrar.setText("Habitantes:\n" +"-50,511 \nLugares interés:\n" + "-Centro Comercial Plaza América " + "-Alpízar's Sport Center \nComidas:\n" + "-Pizza Hut\n" + 
-            "-Burger King \nGasolineras:\n" + "-Lavacar las Américas\n" + "-UNO" );
+            mostrar.setText("Habitantes:\n" +"-50,511 \n\nLugares interés:\n" + "-Centro Comercial Plaza América \n" + "-Alpízar's Sport Center \n\nComidas:\n" + "-Pizza Hut\n" + 
+            "-Burger King \n\nGasolineras:\n" + "-Lavacar las Américas\n" + "-UNO" );
         
         if (lugar.equals("Santa Ana"))
-            mostrar.setText("Habitantes:\n" +"-60,453 \nLugares interés:\n" + "-Hacienda La Chimba\n " + "-Santa Ana Town Center \nComidas:\n" + "-McDonald’s\n" +
-            "-Andiamo Là \nGasolineras:\n" + "-Gasolinera Montes\n" + "-Gasolinera Lindora y Gas Lp" );
+            mostrar.setText("Habitantes:\n" +"-60,453 \n\nLugares interés:\n" + "-Hacienda La Chimba\n " + "-Santa Ana Town Center \n\nComidas:\n" + "-McDonald’s\n" +
+            "-Andiamo Là \n\nGasolineras:\n" + "-Gasolinera Montes\n" + "-Gasolinera Lindora y Gas Lp" );
         
-        if (lugar.equals("Guadalupe"))
-            mostrar.setText("Habitantes:\n" +"-20,663 \nLugares interés:\n" + "-Estadio José Joaquín “Colleya” Fonseca\n " + "-Parque Santiago Jara \nComidas:\n" + 
-            "-Restaurante Copa de Oro\n" + "-Koralitos Marisquería  \nGasolineras:\n" + "-Gasolinera uno\n" + "-Montilermar Gasolinera" );
+        if (lugar.equals("Turrubares"))
+            mostrar.setText("Habitantes:\n" +"-1,357 \n\nLugares interés:\n" + "-Villa Turrubares\n " + "-Parroquia San Pablo de Turrubares \n\nComidas:\n" + 
+            "-Cabinas y Restaurante Guailichu\n" + "-Soda Chuy  \n\nGasolineras:\n" + "-Gasolinera Migas San Pablo");
         
         if (lugar.equals("Ciudad Colón"))
-            mostrar.setText("Habitantes:\n" +"-16,088 \nLugares interés:\n" + "-Los pochotes\n " + "-Waterfall Ciudad Colón \nComidas:\n" + "-Restaurante conservatorium\n" +
-            "-Antojitos de Villa  \nGasolineras:\n" + "-Delta Mora\n" + "-Servicentro los Ángeles" );
+            mostrar.setText("Habitantes:\n" +"-16,088 \n\nLugares interés:\n" + "-Los pochotes\n " + "-Waterfall Ciudad Colón \n\nComidas:\n" + "-Restaurante conservatorium\n" +
+            "-Antojitos de Villa  \n\nGasolineras:\n" + "-Delta Mora\n" + "-Servicentro los Ángeles" );
         
-        if (lugar.equals("Moravia"))
-            mostrar.setText("Habitantes:\n" +"-61,148 \nLugares interés:\n" + "-Lincoln Plaza\n " + "-Parque de San Jerónimo \nComidas:\n" + "-Antojos de montaña\n" +
-            "-Sabor de Maco  \nGasolineras:\n" + "-Llantera Surtimax\n" + "-Estación de servicio, servicentro Moravia" );
+        if (lugar.equals("Pérez Zeledón"))
+            mostrar.setText("Habitantes:\n" +"-143,117 \n\nLugares interés:\n" + "-Parque Central Pérez Zeledón\n " + "-Cerro Pelón\n" +
+            "-Cerro Chirripó \n\nComidas:\n" + "-Finca la Molina\n" +"-Páramo Cafe  \n\nGasolineras:\n" + "-Trova Gasolinera\n" + "-Servicentro Tanok" );
         
         if (lugar.equals("Escazú"))
-            mostrar.setText("Habitantes:\n" +"56,509 \nLugares interés:\n" + "-Mirador Escondido\n " + "-Parque de Bello Horizonte \nComidas:\n" + "-La Casona De Laly\n" +
-            "-La Posada de las Brujas  \nGasolineras:\n" + "No posee" );
+            mostrar.setText("Habitantes:\n" +"56,509 \n\nLugares interés:\n" + "-Mirador Escondido\n " + "-Parque de Bello Horizonte \n\nComidas:\n" + "-La Casona De Laly\n" +
+            "-La Posada de las Brujas  \n\nGasolineras:\n" + "No posee" );
         
         if (lugar.equals("Seleccione un lugar"))
             mostrar.setText("");
