@@ -323,13 +323,13 @@ public class mainWindow extends javax.swing.JFrame {
         if ("Escazú".equals(nombreOrigen)) {
             origen = 5;
         }
-        if ("Guadalupe".equals(nombreOrigen)) {
+        if ("Vázquez de Coronado".equals(nombreOrigen)) {
             origen = 6;
         }
-        if ("Moravia".equals(nombreOrigen)) {
+        if ("Pérez Zeledón".equals(nombreOrigen)) {
             origen = 7;
         }
-        if ("Tibás".equals(nombreOrigen)) {
+        if ("Acosta".equals(nombreOrigen)) {
             origen = 8;
         }
         if ("Alajuelita".equals(nombreOrigen)) {
@@ -338,21 +338,19 @@ public class mainWindow extends javax.swing.JFrame {
         if ("Hatillo".equals(nombreOrigen)) {
             origen = 10;
         }
-        if ("Curridabat".equals(nombreOrigen)) {
+        if ("Dota".equals(nombreOrigen)) {
             origen = 11;
         }
-        if ("San Pedro".equals(nombreOrigen)) {
+        if ("Turrubares".equals(nombreOrigen)) {
             origen = 12;
         }
-        if ("Sabanilla".equals(nombreOrigen)) {
+        if ("Tarrazu".equals(nombreOrigen)) {
             origen = 13;
         }
         if ("Desamparados".equals(nombreOrigen)) {
             origen = 14;
         }
-        if ("San Antonio".equals(nombreOrigen)) {
-            origen = 15;
-        }
+       
         
 // Destinos 
          if ("Barbacoas".equals(nombreDestino)) {
@@ -373,13 +371,13 @@ public class mainWindow extends javax.swing.JFrame {
         if ("Escazú".equals(nombreDestino)) {
             origen = 5;
         }
-        if ("Guadalupe".equals(nombreDestino)) {
+        if ("Vázquez de Coronado".equals(nombreDestino)) {
             origen = 6;
         }
-        if ("Moravia".equals(nombreDestino)) {
+        if ("Pérez Zeledón".equals(nombreDestino)) {
             origen = 7;
         }
-        if ("Tibás".equals(nombreDestino)) {
+        if ("Acosta".equals(nombreDestino)) {
             origen = 8;
         }
         if ("Alajuelita".equals(nombreDestino)) {
@@ -388,23 +386,18 @@ public class mainWindow extends javax.swing.JFrame {
         if ("Hatillo".equals(nombreDestino)) {
             origen = 10;
         }
-        if ("Curridabat".equals(nombreDestino)) {
+        if ("Dota".equals(nombreDestino)) {
             origen = 11;
         }
-        if ("San Pedro".equals(nombreDestino)) {
+        if ("Turrubares".equals(nombreDestino)) {
             origen = 12;
         }
-        if ("Sabanilla".equals(nombreDestino)) {
+        if ("Tarrazu".equals(nombreDestino)) {
             origen = 13;
         }
         if ("Desamparados".equals(nombreDestino)) {
             origen = 14;
-        }
-        if ("San Antonio".equals(nombreDestino)) {
-            origen = 15;
-        }
-        
-        
+        }   
         
         if (origen == destino) {
             Font fuente = new Font("Arial", Font.BOLD, 18);
