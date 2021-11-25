@@ -43,7 +43,7 @@
                   <Component id="jPanel" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="0" min="-2" pref="636" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="0" pref="617" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="619" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,10 +84,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Destiny" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="buscar" min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="Buscar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="27" max="32767" attributes="0"/>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -101,7 +101,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="Mostrar" min="-2" max="-2" attributes="0"/>
+                  <Component id="MostrarCaminos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="113" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Mostrar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="MostrarCaminos" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -133,8 +133,8 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="buscar" min="-2" max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" pref="63" max="-2" attributes="0"/>
+                              <Component id="Buscar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -153,14 +153,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Destiny"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="buscar">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Consult"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buscarActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
@@ -241,12 +233,12 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Mostrar">
+        <Component class="javax.swing.JButton" name="MostrarCaminos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar Camino"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MostrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MostrarCaminosActionPerformed"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -264,6 +256,14 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="Buscar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consult"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BuscarActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">

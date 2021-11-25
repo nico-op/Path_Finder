@@ -39,7 +39,7 @@ public class mainWindow extends javax.swing.JFrame {
         initComponents();
         Destiny.setEnabled(true);
         Origin.setEnabled(true);
-        buscar.setEnabled(false);
+        Buscar.setEnabled(false);
     }
 
     /**
@@ -54,14 +54,14 @@ public class mainWindow extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         labelOrigen = new javax.swing.JLabel();
         labelDestiny = new javax.swing.JLabel();
-        buscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Origin = new javax.swing.JComboBox<>();
         Destiny = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
-        Mostrar = new javax.swing.JButton();
+        MostrarCaminos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txt = new javax.swing.JTextArea();
+        Buscar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -76,13 +76,6 @@ public class mainWindow extends javax.swing.JFrame {
         labelOrigen.setText("Origen");
 
         labelDestiny.setText("Destiny");
-
-        buscar.setText("Consult");
-        buscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("La mejor ruta es:");
@@ -108,16 +101,23 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        Mostrar.setText("Mostrar Camino");
-        Mostrar.addActionListener(new java.awt.event.ActionListener() {
+        MostrarCaminos.setText("Mostrar Camino");
+        MostrarCaminos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MostrarActionPerformed(evt);
+                MostrarCaminosActionPerformed(evt);
             }
         });
 
         txt.setColumns(20);
         txt.setRows(5);
         jScrollPane1.setViewportView(txt);
+
+        Buscar.setText("Consult");
+        Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -135,8 +135,8 @@ public class mainWindow extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Destiny, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(Buscar)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -146,7 +146,7 @@ public class mainWindow extends javax.swing.JFrame {
                         .addGap(49, 49, 49))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(Mostrar)
+                .addComponent(MostrarCaminos)
                 .addGap(220, 220, 220)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
@@ -156,7 +156,7 @@ public class mainWindow extends javax.swing.JFrame {
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(Mostrar))
+                    .addComponent(MostrarCaminos))
                 .addGap(22, 22, 22)
                 .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelLayout.createSequentialGroup()
@@ -172,8 +172,8 @@ public class mainWindow extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buscar)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Buscar))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
 
@@ -211,7 +211,7 @@ public class mainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 636, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 617, Short.MAX_VALUE))
+                .addGap(0, 619, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,11 +229,27 @@ public class mainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-     private void MostrarCaminosActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        //jMenuItem2.setEnabled(false);
+     
+    private void OriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OriginActionPerformed
+        Destiny.setEnabled(true);
+    }//GEN-LAST:event_OriginActionPerformed
+
+    private void DestinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinyActionPerformed
+        Buscar.setEnabled(true);
+        
+    }//GEN-LAST:event_DestinyActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        AyudaViajero ayuda = new AyudaViajero();
+        ayuda.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void MostrarCaminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarCaminosActionPerformed
+           //jMenuItem2.setEnabled(false);
         Origin.setEnabled(true);
-        Mostrar.setEnabled(false);
-        Mostrar.setVisible(false);
+        MostrarCaminos.setEnabled(false);
+        MostrarCaminos.setVisible(false);
         txt.setEnabled(false);
 
         jPanel1.paint(jPanel1.getGraphics());
@@ -274,27 +290,32 @@ public class mainWindow extends javax.swing.JFrame {
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9, 0},};
 
-        int xx1[] = {425, 375, 280, 540, 440, 425, 275, 260, 350, 170, 600, 450, 470, 160, 140};
-        int yy1[] = {405, 485, 540, 550, 185, 530, 430, 630, 550, 370, 425, 550, 615, 520, 585};
-        String nom[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
+       int xx1[] = {284, 266, 317, 135, 186, 324, 272, 208, 248, 271, 361, 227, 88, 381, 482};
+       int yy1[] = {126, 138, 163, 185, 194, 286, 201, 146, 135, 153, 84, 223, 184, 280, 361};
+       String nom[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
       
-        for (int j = 0; j < 22; j++) {
+        for (int j = 0; j < 15; j++) {
             arboles.setCordeX(j, xx1[j]);
             arboles.setCordeY(j, yy1[j]);
             arboles.setNombre(j, nom[j]);
 
         }
-        for (int j = 0; j < 22; j++) {
-            for (int k = 0; k < 22; k++) {
+        for (int j = 0; j < 15; j++) {
+            for (int k = 0; k < 15; k++) {
                 arboles.setmAdyacencia(j, k, Matriz[j][k]);
                 arboles.setmCoeficiente(j, k, coe[j][k]);
             }
         }///
         Numerotope = 15;
         PintarFiguras(Numerotope, arboles);
-    } 
-     
-    private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
+    
+    }//GEN-LAST:event_MostrarCaminosActionPerformed
+
+    private void jPanel1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jPanel1ComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel1ComponentAdded
+
+    private void BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarActionPerformed
         int origen = 0, destino = 0;
         String nombreOrigen, nombreDestino;
         nombreOrigen = (String) Origin.getSelectedItem();
@@ -413,32 +434,8 @@ public class mainWindow extends javax.swing.JFrame {
             txt.setEnabled(false);
             
             //kmRecorridos.setText(Dijkstra.getAcumulado() + " KM");
-        }
-    }//GEN-LAST:event_buscarActionPerformed
-
-    private void OriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OriginActionPerformed
-        Destiny.setEnabled(true);
-    }//GEN-LAST:event_OriginActionPerformed
-
-    private void DestinyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DestinyActionPerformed
-        buscar.setEnabled(true);
-        
-    }//GEN-LAST:event_DestinyActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AyudaViajero ayuda = new AyudaViajero();
-        ayuda.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void MostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MostrarActionPerformed
-
-    private void jPanel1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jPanel1ComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel1ComponentAdded
-
+    }//GEN-LAST:event_BuscarActionPerformed
+    }
     /**
      * @param args the command line arguments
      */
@@ -476,10 +473,10 @@ public class mainWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Buscar;
     public static javax.swing.JComboBox<String> Destiny;
-    private javax.swing.JButton Mostrar;
+    private javax.swing.JButton MostrarCaminos;
     public static javax.swing.JComboBox<String> Origin;
-    private javax.swing.JButton buscar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
