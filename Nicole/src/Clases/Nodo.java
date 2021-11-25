@@ -1,9 +1,6 @@
 package Clases;
 
-/**
- *
- * @author 
- *////
+
 public class Nodo {    
    private  int nombre ;
    private boolean visitado ;
