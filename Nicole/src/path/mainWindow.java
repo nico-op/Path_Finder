@@ -6,11 +6,7 @@ import Clases.DatosGraficos;
 import Clases.PintanrDibujos;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 public class mainWindow extends javax.swing.JFrame {
@@ -112,7 +108,7 @@ public class mainWindow extends javax.swing.JFrame {
             }
         });
 
-        Mostrar.setText("Buscar Camino");
+        Mostrar.setText("Mostrar Camino");
         Mostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MostrarActionPerformed(evt);
