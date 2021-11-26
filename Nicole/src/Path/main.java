@@ -55,6 +55,7 @@ public class main extends javax.swing.JFrame {
         txtOrigen = new javax.swing.JLabel();
         MostrarCaminos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        kmRecorridos = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +70,7 @@ public class main extends javax.swing.JFrame {
         txtKMAcumulados.setRows(5);
         jScrollPane1.setViewportView(txtKMAcumulados);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 650, 210, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 650, 200, 70));
 
         BuscarCamino.setBackground(new java.awt.Color(153, 153, 153));
         BuscarCamino.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -79,7 +80,7 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 690, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
@@ -114,7 +115,7 @@ public class main extends javax.swing.JFrame {
                 EleccionOrigenActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 200, -1));
+        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, 200, -1));
 
         EleccionDestino.setBackground(new java.awt.Color(153, 153, 153));
         EleccionDestino.setEditable(true);
@@ -125,17 +126,17 @@ public class main extends javax.swing.JFrame {
                 EleccionDestinoActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, 200, 30));
+        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 200, 30));
 
         txtDestino.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtDestino.setText("Destiny:");
         txtDestino.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 640, -1, -1));
+        getContentPane().add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, -1, -1));
 
         txtOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtOrigen.setText("Origin:");
         txtOrigen.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, -1, -1));
+        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
 
         MostrarCaminos.setBackground(new java.awt.Color(51, 51, 51));
         MostrarCaminos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -156,6 +157,11 @@ public class main extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, -1));
+
+        kmRecorridos.setBackground(new java.awt.Color(153, 153, 255));
+        kmRecorridos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        kmRecorridos.setOpaque(true);
+        getContentPane().add(kmRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 730, 160, 40));
 
         jLabel1.setBackground(new java.awt.Color(0, 255, 102));
         jLabel1.setForeground(new java.awt.Color(0, 255, 153));
@@ -312,66 +318,55 @@ public class main extends javax.swing.JFrame {
         jPanel1.paint(jPanel1.getGraphics());
 
         int Matriz[][] = {
-            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0},
-            {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0},
-            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0},
-            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0}
         };
 
         double coe[][] = {
-            {0, 57.4, 0, 0, 147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {57.4, 0, 0, 0, 0, 69.1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 55.6, 0, 0, 0, 0, 0, 0, 26.4, 0, 0, 85.1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71.8, 0, 0, 0, 0, 0, 0, 0, 0, 26},
-            {147, 0, 0, 0, 0, 0, 0, 0, 0, 0, 327.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 69.1, 0, 0, 0, 0, 0, 0, 93.3, 0, 0, 86.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 71.3},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 158, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 61.7, 0, 0, 0, 0, 0, 0, 42.7, 0, 85.5, 0, 95.3, 0, 0},
-            {0, 0, 55.6, 0, 0, 93.3, 0, 61.7, 0, 0, 0, 0, 0, 0, 0, 45.7, 0, 82.3, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 109, 0, 0, 0, 86, 0},
-            {0, 0, 0, 0, 327.4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 116.7},
-            {0, 0, 0, 0, 0, 86.5, 0, 0, 0, 0, 0, 0, 56.1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 71.8, 0, 0, 0, 0, 0, 0, 0, 56.1, 0, 0, 0, 0, 0, 70.5, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9, 0, 50.6, 0, 76.3, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 86.9, 0, 0, 0, 0, 0, 54.9, 0, 0},
-            {0, 0, 26, 0, 0, 0, 0, 42.7, 45.7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 109, 0, 0, 0, 50.6, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 85.5, 82.3, 0, 0, 0, 70.5, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 85.1, 0, 0, 0, 158, 0, 0, 0, 0, 0, 0, 76.3, 0, 0, 0, 0, 0, 0, 53.7, 0},
-            {0, 0, 0, 0, 0, 0, 0, 95.3, 0, 0, 0, 0, 0, 0, 54.9, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 86, 0, 0, 0, 0, 0, 0, 0, 0, 53.7, 0, 0, 0},
-            {0, 0, 0, 26, 0, 71.3, 0, 0, 0, 0, 116.7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},};
+            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+            {0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+            {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0}
+        };  
 
-        int xx1[] = {290, 375, 280, 540, 440, 425, 275, 260, 350, 170, 600, 450, 470, 160, 140};
-        int yy1[] = {125, 485, 540, 550, 185, 530, 430, 630, 550, 370, 425, 550, 615, 520, 585};
-        String nom[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
+        int xx1[] = {290, 260, 310, 130, 320, 270, 210, 170, 240, 275, 350, 220, 90, 390, 480};
+        int yy1[] = {125, 135, 170, 210, 300, 200, 155, 170, 130, 145, 90, 200, 180, 280, 320};
+        String nom[] = {"1", "2", "3", "4.1", "5", "6", "7", "4.2", "9", "10", "11", "12", "16", "17", "19"};
       
-        for (int j = 0; j < 14; j++) {
+        for (int j = 0; j < 15; j++) {
             arboles.setCordeX(j, xx1[j]);
             arboles.setCordeY(j, yy1[j]);
             arboles.setNombre(j, nom[j]);
 
         }
-        for (int j = 0; j < 14; j++) {
-            for (int k = 0; k < 14; k++) {
+        for (int j = 0; j < 15; j++) {
+            for (int k = 0; k < 15; k++) {
                 arboles.setmAdyacencia(j, k, Matriz[j][k]);
                 arboles.setmCoeficiente(j, k, coe[j][k]);
             }
@@ -431,6 +426,7 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel kmRecorridos;
     private javax.swing.JLabel kmRecorridos2;
     private javax.swing.JLabel txtDestino;
     private javax.swing.JTextArea txtKMAcumulados;
