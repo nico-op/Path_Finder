@@ -63,14 +63,13 @@ public class main extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 115, 223));
         setForeground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(650, 710));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtKMAcumulados.setColumns(20);
         txtKMAcumulados.setRows(5);
         jScrollPane1.setViewportView(txtKMAcumulados);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 660, 240, -1));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 650, 210, -1));
 
         BuscarCamino.setBackground(new java.awt.Color(153, 153, 153));
         BuscarCamino.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -80,22 +79,21 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 580, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 690, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotonSalir.setBackground(new java.awt.Color(255, 51, 51));
-        BotonSalir.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        BotonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        BotonSalir.setBackground(new java.awt.Color(204, 204, 255));
+        BotonSalir.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
         BotonSalir.setText("Exit");
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonSalirActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 80, 40));
+        jPanel1.add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 70, 30));
 
         ImgMapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mapa_canton1.png"))); // NOI18N
         jPanel1.add(ImgMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 510));
@@ -116,7 +114,7 @@ public class main extends javax.swing.JFrame {
                 EleccionOrigenActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 560, 200, -1));
+        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 200, -1));
 
         EleccionDestino.setBackground(new java.awt.Color(153, 153, 153));
         EleccionDestino.setEditable(true);
@@ -127,17 +125,17 @@ public class main extends javax.swing.JFrame {
                 EleccionDestinoActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 590, -1, -1));
+        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 640, 200, 30));
 
         txtDestino.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtDestino.setText("Destiny:");
         txtDestino.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        getContentPane().add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, -1, -1));
+        getContentPane().add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 640, -1, -1));
 
         txtOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtOrigen.setText("Origin:");
         txtOrigen.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, -1, -1));
+        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, -1, -1));
 
         MostrarCaminos.setBackground(new java.awt.Color(51, 51, 51));
         MostrarCaminos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -147,7 +145,7 @@ public class main extends javax.swing.JFrame {
                 MostrarCaminosActionPerformed(evt);
             }
         });
-        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, -1, -1));
+        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -157,11 +155,11 @@ public class main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 255, 102));
         jLabel1.setForeground(new java.awt.Color(0, 255, 153));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mapa1.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo (3).jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 630, 290));
 
