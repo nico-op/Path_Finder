@@ -1,13 +1,13 @@
 package Logic;
 
-import static Path.Inicio.PintarFiguras;
-import static Path.Inicio.jPanel1;
+import static Path.main.PintarFiguras;
+import static Path.main.jPanel1;
 import java.awt.Color;
 
 
-public class AlgoritmoDijkstra {
+public class Dijkstra {
 
-    private final DatosGraficos arboles;
+    private final Grafics arboles;
     private int subTope;
     private Nodo Nodoauxiliar = null;
     private double auxiliarAumulado; // es un acumulado auxiliar
@@ -17,7 +17,7 @@ public class AlgoritmoDijkstra {
     private int Origen;
     private final int nodoFinal;
 
-    public AlgoritmoDijkstra(DatosGraficos arboles, int tope, int permanente, int nodoFin) {
+    public Dijkstra(Grafics arboles, int tope, int permanente, int nodoFin) {
         this.arboles = arboles;
         this.tope = tope;
         this.nodo = new Nodo[tope];
@@ -41,7 +41,7 @@ public class AlgoritmoDijkstra {
         }
             jPanel1.paint(jPanel1.getGraphics());
             PintarFiguras(tope, arboles);
-            PintanrDibujos.seleccionNodo(jPanel1.getGraphics(), 
+            Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(Origen), 
                     arboles.getCordeY(Origen), null, Color.GREEN); // pinta de color el nodo de Origen
 
@@ -86,19 +86,19 @@ public class AlgoritmoDijkstra {
             
             //Pintando caminos recorridos
             while (Nodoauxiliar.getPredecesor() != null) {
-                PintanrDibujos.pinta_Camino(jPanel1.getGraphics(), 
+                Paint.pinta_Camino(jPanel1.getGraphics(), 
                         arboles.getCordeX(Nodoauxiliar.getNombre()),
                         arboles.getCordeY(Nodoauxiliar.getNombre()),
                         arboles.getCordeX(Nodoauxiliar.getPredecesor().getNombre()), 
                         arboles.getCordeY(Nodoauxiliar.getPredecesor().getNombre()), Color.BLUE);
                 
-                PintanrDibujos.seleccionNodo(jPanel1.getGraphics(), 
+                Paint.seleccionNodo(jPanel1.getGraphics(), 
                         arboles.getCordeX(Nodoauxiliar.getNombre()), 
                         arboles.getCordeY(Nodoauxiliar.getNombre()), null, Color.BLUE);
                 Nodoauxiliar = Nodoauxiliar.getPredecesor();
             }//fin de while Recorriendo caminos
             
-            PintanrDibujos.seleccionNodo(jPanel1.getGraphics(), 
+            Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(nodoFinal), 
                     arboles.getCordeY(nodoFinal), null, Color.RED);//Pintando Nodo del destino
         

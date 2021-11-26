@@ -1,6 +1,6 @@
 package Logic;
 
-public class DatosGraficos {
+public class Grafics {
 
     private final double MatrizCoeficiente[][] = new double[51][51];
     private final int MatrizAdyacencia[][] = new int[51][51];
@@ -13,7 +13,7 @@ public class DatosGraficos {
      *
      * @author Jose H Elel
      */
-    public DatosGraficos() {
+    public Grafics() {
 
     }
 

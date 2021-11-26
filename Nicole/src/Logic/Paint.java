@@ -11,9 +11,9 @@ import java.awt.RenderingHints;
  *
  * @author Jose H Elel
  */
-public class PintanrDibujos {
+public class Paint {
 
-    public PintanrDibujos() {
+    public Paint() {
 
     }
 
