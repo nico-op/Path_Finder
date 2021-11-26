@@ -1,4 +1,4 @@
-package Clases;
+package Logic;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -9,7 +9,7 @@ import java.awt.RenderingHints;
 
 /**
  *
- * @author 
+ * @author Jose H Elel
  */
 public class PintanrDibujos {
 

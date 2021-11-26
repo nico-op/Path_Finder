@@ -1,13 +1,16 @@
-package Clases;
+package Logic;
 
-
+/**
+ *
+ * @author Jose H Elel
+ */
 public class Nodo {    
    private  int nombre ;
    private boolean visitado ;
    private boolean etiqueta;
    private double acumulado; // lleva el acoulado de cada nodo
    private Nodo Predecesor;
-   /////ff
+   
    public Nodo(){
        this.nombre =-1;
        this.visitado = false;

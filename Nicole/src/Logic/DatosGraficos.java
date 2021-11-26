@@ -1,4 +1,4 @@
-package Clases;
+package Logic;
 
 public class DatosGraficos {
 
@@ -11,7 +11,7 @@ public class DatosGraficos {
 
     /**
      *
-     * @author 
+     * @author Jose H Elel
      */
     public DatosGraficos() {
 

@@ -1,15 +1,12 @@
-package Clases;
+package Logic;
 
-import static path.mainWindow.PintarFiguras;
-import static path.mainWindow.jPanel1;
+import static Path.Inicio.PintarFiguras;
+import static Path.Inicio.jPanel1;
 import java.awt.Color;
 
-/**
- *
- * @author 
- */
-public class AlgoritmoDijkstra {///
-///
+
+public class AlgoritmoDijkstra {
+
     private final DatosGraficos arboles;
     private int subTope;
     private Nodo Nodoauxiliar = null;
