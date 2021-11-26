@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Jose H Elel
+ * @author Nico
  */
 public class main extends javax.swing.JFrame {
 
