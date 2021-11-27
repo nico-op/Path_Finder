@@ -21,11 +21,11 @@ public class Paint {
         //g.drawOval(x, y-10, 20, 20);
         ((Graphics2D) g).setColor(Color.CYAN);
         ((Graphics2D) g).setStroke(new BasicStroke(1));//leda el grosor al circulo        
-        ((Graphics2D) g).fillOval(x, y, 15, 15);
+        ((Graphics2D) g).fillOval(x, y, 12, 12);
         ((Graphics2D) g).setColor(Color.BLACK);
-        ((Graphics2D) g).drawOval(x, y, 15, 15);
+        ((Graphics2D) g).drawOval(x, y, 12, 12);
 
-        ((Graphics2D) g).setColor(Color.BLUE);
+        ((Graphics2D) g).setColor(Color.BLACK);//COLOR NÚMERO DE NODO
         Font fuente = new Font("Monospaced", Font.BOLD, 16);
         g.setFont(fuente);
         ((Graphics2D) g).drawString(n, x, y);
@@ -69,10 +69,10 @@ public class Paint {
     public static void seleccionNodo(Graphics g, int x, int y, String n, Color co) {
         
         ((Graphics2D) g).setColor(co);
-        ((Graphics2D) g).setStroke(new BasicStroke(2));//leda el grosor del contorno al circulo        
-        ((Graphics2D) g).fillOval(x, y, 15, 15);//tamanio del circulo
+        ((Graphics2D) g).setStroke(new BasicStroke(1));//leda el grosor del contorno al circulo        
+        ((Graphics2D) g).fillOval(x, y, 12, 12);//tamanio del circulo
         ((Graphics2D) g).setColor(Color.BLACK);
-        ((Graphics2D) g).drawOval(x, y, 15, 15);
+        ((Graphics2D) g).drawOval(x, y, 12, 12);
 
     }
 }
