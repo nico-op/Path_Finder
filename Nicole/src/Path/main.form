@@ -69,7 +69,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="180" y="680" width="100" height="30"/>
+          <AbsoluteConstraints x="200" y="520" width="100" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -167,7 +167,7 @@
             <StringItem index="9" value="Hatillo"/>
             <StringItem index="10" value="P&#xe9;rez Zeled&#xf3;n"/>
             <StringItem index="11" value="V&#xe1;zquez de Coronado"/>
-            <StringItem index="12" value="Tarrazu "/>
+            <StringItem index="12" value="Tarraz&#xfa; "/>
             <StringItem index="13" value="Santa Ana"/>
             <StringItem index="14" value="Santiago"/>
             <StringItem index="15" value="Acosta"/>
@@ -210,7 +210,7 @@
             <StringItem index="9" value="Hatillo"/>
             <StringItem index="10" value="P&#xe9;rez Zeled&#xf3;n"/>
             <StringItem index="11" value="V&#xe1;zquez de Coronado"/>
-            <StringItem index="12" value="Tarrazu "/>
+            <StringItem index="12" value="Tarraz&#xfa; "/>
             <StringItem index="13" value="Santa Ana"/>
             <StringItem index="14" value="Santiago"/>
             <StringItem index="15" value="Acosta"/>
@@ -273,7 +273,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="140" y="530" width="-1" height="-1"/>
+          <AbsoluteConstraints x="120" y="670" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

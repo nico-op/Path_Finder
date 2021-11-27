@@ -80,7 +80,7 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 680, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
@@ -109,7 +109,7 @@ public class main extends javax.swing.JFrame {
 
         EleccionOrigen.setBackground(new java.awt.Color(102, 102, 102));
         EleccionOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        EleccionOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Dota", "Desamparados", "Escazú", "Turrubares", "Hatillo", "Pérez Zeledón", "Vázquez de Coronado", "Tarrazu ", "Santa Ana", "Santiago", "Acosta", " " }));
+        EleccionOrigen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Dota", "Desamparados", "Escazú", "Turrubares", "Hatillo", "Pérez Zeledón", "Vázquez de Coronado", "Tarrazú ", "Santa Ana", "Santiago", "Acosta", " " }));
         EleccionOrigen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EleccionOrigenActionPerformed(evt);
@@ -120,7 +120,7 @@ public class main extends javax.swing.JFrame {
         EleccionDestino.setBackground(new java.awt.Color(153, 153, 153));
         EleccionDestino.setEditable(true);
         EleccionDestino.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
-        EleccionDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Dota", "Desamparados", "Escazú", "Turrubares", "Hatillo", "Pérez Zeledón", "Vázquez de Coronado", "Tarrazu ", "Santa Ana", "Santiago", "Acosta", " " }));
+        EleccionDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Alajuelita", "Aserrí", "Barbacoas", "Ciudad Colón", "Dota", "Desamparados", "Escazú", "Turrubares", "Hatillo", "Pérez Zeledón", "Vázquez de Coronado", "Tarrazú ", "Santa Ana", "Santiago", "Acosta", " " }));
         EleccionDestino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EleccionDestinoActionPerformed(evt);
@@ -146,7 +146,7 @@ public class main extends javax.swing.JFrame {
                 MostrarCaminosActionPerformed(evt);
             }
         });
-        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, -1, -1));
+        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -178,99 +178,99 @@ public class main extends javax.swing.JFrame {
         nombreOrigen = (String) EleccionOrigen.getSelectedItem();
         nombreDestino = (String) EleccionDestino.getSelectedItem();
 
-        if ("Barbacoas".equals(nombreOrigen)) {
+        if ("Hatillo".equals(nombreOrigen)) {
             origen = 0;
         }
-        if ("Santiago".equals(nombreOrigen)) {
+        if ("Escazú".equals(nombreOrigen)) {
             origen = 1;
         }
-        if ("Aserrí".equals(nombreOrigen)) {
+        if ("Desamparados".equals(nombreOrigen)) {
             origen = 2;
         }
-        if ("Ciudad Colón".equals(nombreOrigen)) {
+        if ("Barbacoas".equals(nombreOrigen)) {
             origen = 3;
         }
-        if ("Santa Ana".equals(nombreOrigen)) {
+        if ("Santiago".equals(nombreOrigen)) {
             origen = 4;
         }
-        if ("Escazú".equals(nombreOrigen)) {
+        if ("Tarrazú".equals(nombreOrigen)) {
             origen = 5;
         }
-        if ("Vázquez de Coronado".equals(nombreOrigen)) {
+        if ("Aserrí".equals(nombreOrigen)) {
             origen = 6;
         }
-        if ("Pérez Zeledón".equals(nombreOrigen)) {
+        if ("Ciudad Colón".equals(nombreOrigen)) {
             origen = 7;
         }
-        if ("Acosta".equals(nombreOrigen)) {
+        if ("Santa Ana".equals(nombreOrigen)) {
             origen = 8;
         }
         if ("Alajuelita".equals(nombreOrigen)) {
             origen = 9;
         }
-        if ("Hatillo".equals(nombreOrigen)) {
+        if ("Vázquez de Coronado".equals(nombreOrigen)) {
             origen = 10;
         }
-        if ("Dota".equals(nombreOrigen)) {
+        if ("Acosta".equals(nombreOrigen)) {
             origen = 11;
         }
         if ("Turrubares".equals(nombreOrigen)) {
             origen = 12;
         }
-        if ("Tarrazu".equals(nombreOrigen)) {
+        if ("Dota".equals(nombreOrigen)) {
             origen = 13;
         }
-        if ("Desamparados".equals(nombreOrigen)) {
+        if ("Pérez Zeledón".equals(nombreOrigen)) {
             origen = 14;
         }
        
         
 // Destinos 
-         if ("Barbacoas".equals(nombreDestino)) {
+        if ("Hatillo".equals(nombreDestino)) {
             origen = 0;
         }
-        if ("Santiago".equals(nombreDestino)) {
+        if ("Escazú".equals(nombreDestino)) {
             origen = 1;
         }
-        if ("Aserrí".equals(nombreDestino)) {
+        if ("Desamparados".equals(nombreDestino)) {
             origen = 2;
         }
-        if ("Ciudad Colón".equals(nombreDestino)) {
+        if ("Barbacoas".equals(nombreDestino)) {
             origen = 3;
         }
-        if ("Santa Ana".equals(nombreDestino)) {
+        if ("Santiago".equals(nombreDestino)) {
             origen = 4;
         }
-        if ("Escazú".equals(nombreDestino)) {
+        if ("Tarrazú".equals(nombreDestino)) {
             origen = 5;
         }
-        if ("Vázquez de Coronado".equals(nombreDestino)) {
+        if ("Aserrí".equals(nombreDestino)) {
             origen = 6;
         }
-        if ("Pérez Zeledón".equals(nombreDestino)) {
+        if ("Ciudad Colón".equals(nombreDestino)) {
             origen = 7;
         }
-        if ("Acosta".equals(nombreDestino)) {
+        if ("Santa Ana".equals(nombreDestino)) {
             origen = 8;
         }
         if ("Alajuelita".equals(nombreDestino)) {
             origen = 9;
         }
-        if ("Hatillo".equals(nombreDestino)) {
+        if ("Vázquez de Coronado".equals(nombreDestino)) {
             origen = 10;
         }
-        if ("Dota".equals(nombreDestino)) {
+        if ("Acosta".equals(nombreDestino)) {
             origen = 11;
         }
         if ("Turrubares".equals(nombreDestino)) {
             origen = 12;
         }
-        if ("Tarrazu".equals(nombreDestino)) {
+        if ("Dota".equals(nombreDestino)) {
             origen = 13;
         }
-        if ("Desamparados".equals(nombreDestino)) {
+        if ("Pérez Zeledón".equals(nombreDestino)) {
             origen = 14;
-        }   
+        }  
 
         if (origen == destino) {
             Font fuente = new Font("Arial", Font.BOLD, 18);
@@ -318,22 +318,22 @@ public class main extends javax.swing.JFrame {
         jPanel1.paint(jPanel1.getGraphics());
 
         int Matriz[][] = {
-            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
-            {0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0}
+          
+            {0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0},
+            {0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0},
+            {1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+            {1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
         };
 
         double coe[][] = {
@@ -351,14 +351,15 @@ public class main extends javax.swing.JFrame {
             {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0},
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
-            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0}
+            {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
         };  
 
-        int xx1[] = {290, 260, 310, 130, 320, 270, 210, 170, 240, 275, 350, 220, 90, 390, 480};
-        int yy1[] = {125, 135, 170, 210, 300, 200, 155, 170, 130, 145, 90, 200, 180, 280, 320};
-        String nom[] = {"1", "2", "3", "4.1", "5", "6", "7", "4.2", "9", "10", "11", "12", "16", "17", "19"};
+        int xx1[] = {290,240, 310, 130,170, 320, 270, 210, 240, 275, 350, 220, 90, 390, 480,400};
+        int yy1[] = {125,135, 170, 210, 170, 300, 200, 155, 130, 145, 90, 200, 180, 280, 320,400};
+        String nom[] = {"1", "2", "3", "4.1", "4.2","5", "6", "7","9", "10", "11", "12", "16", "17", "19", "22"};
       
+        
+     
         for (int j = 0; j < 15; j++) {
             arboles.setCordeX(j, xx1[j]);
             arboles.setCordeY(j, yy1[j]);
@@ -404,10 +405,7 @@ public class main extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
