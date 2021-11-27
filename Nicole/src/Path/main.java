@@ -80,7 +80,7 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 520, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
@@ -146,7 +146,7 @@ public class main extends javax.swing.JFrame {
                 MostrarCaminosActionPerformed(evt);
             }
         });
-        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, -1, -1));
+        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -227,49 +227,49 @@ public class main extends javax.swing.JFrame {
         
 // Destinos 
         if ("Hatillo".equals(nombreDestino)) {
-            origen = 0;
+            destino = 0;
         }
         if ("Escazú".equals(nombreDestino)) {
-            origen = 1;
+            destino = 1;
         }
         if ("Desamparados".equals(nombreDestino)) {
-            origen = 2;
+            destino = 2;
         }
         if ("Barbacoas".equals(nombreDestino)) {
-            origen = 3;
+            destino = 3;
         }
         if ("Santiago".equals(nombreDestino)) {
-            origen = 4;
+            destino = 4;
         }
         if ("Tarrazú".equals(nombreDestino)) {
-            origen = 5;
+            destino = 5;
         }
         if ("Aserrí".equals(nombreDestino)) {
-            origen = 6;
+            destino = 6;
         }
         if ("Ciudad Colón".equals(nombreDestino)) {
-            origen = 7;
+            destino = 7;
         }
         if ("Santa Ana".equals(nombreDestino)) {
-            origen = 8;
+            destino = 8;
         }
         if ("Alajuelita".equals(nombreDestino)) {
-            origen = 9;
+            destino = 9;
         }
         if ("Vázquez de Coronado".equals(nombreDestino)) {
-            origen = 10;
+            destino = 10;
         }
         if ("Acosta".equals(nombreDestino)) {
-            origen = 11;
+            destino = 11;
         }
         if ("Turrubares".equals(nombreDestino)) {
-            origen = 12;
+            destino = 12;
         }
         if ("Dota".equals(nombreDestino)) {
-            origen = 13;
+            destino = 13;
         }
         if ("Pérez Zeledón".equals(nombreDestino)) {
-            origen = 14;
+            destino = 14;
         }  
 
         if (origen == destino) {
@@ -278,7 +278,7 @@ public class main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Estas en:" + nombreOrigen);
             txtKMAcumulados.setText("Intenta de nuevo!!");
             txtKMAcumulados.setEnabled(false);
-            txtKMAcumulados.setForeground(Color.RED);
+            txtKMAcumulados.setForeground(Color.BLACK);
 
         } else {
             Dijkstra Dijkstra = new Dijkstra(arboles, Numerotope, origen, destino);
@@ -287,7 +287,7 @@ public class main extends javax.swing.JFrame {
             Font fuente = new Font("Arial", Font.BOLD, 18);
             txtKMAcumulados.setFont(fuente);
             txtKMAcumulados.setText("No hay ningun error :)");
-            txtKMAcumulados.setForeground(Color.BLUE);
+            txtKMAcumulados.setForeground(Color.RED);
             txtKMAcumulados.setEnabled(false);
             
            // kmRecorridos.setText(Dijkstra.getAcumulado() + " KM");

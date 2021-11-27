@@ -43,7 +43,7 @@ public class Dijkstra {
             PintarFiguras(tope, arboles);
             Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(Origen), 
-                    arboles.getCordeY(Origen), null, Color.GREEN); // pinta de color el nodo de Origen
+                    arboles.getCordeY(Origen), null, Color.DARK_GRAY); // pinta de color el nodo de Origen
 
             nodo[Origen].setVisitado(true);
             nodo[Origen].setNombre(Origen);
@@ -86,21 +86,21 @@ public class Dijkstra {
             
             //Pintando caminos recorridos
             while (Nodoauxiliar.getPredecesor() != null) {
-                Paint.pinta_Camino(jPanel1.getGraphics(), 
+                Paint.pinta_Camino(jPanel1.getGraphics(), // PINTA EL CAMINO 
                         arboles.getCordeX(Nodoauxiliar.getNombre()),
                         arboles.getCordeY(Nodoauxiliar.getNombre()),
                         arboles.getCordeX(Nodoauxiliar.getPredecesor().getNombre()), 
-                        arboles.getCordeY(Nodoauxiliar.getPredecesor().getNombre()), Color.BLUE);
+                        arboles.getCordeY(Nodoauxiliar.getPredecesor().getNombre()), Color.MAGENTA);
                 
                 Paint.seleccionNodo(jPanel1.getGraphics(), 
                         arboles.getCordeX(Nodoauxiliar.getNombre()), 
-                        arboles.getCordeY(Nodoauxiliar.getNombre()), null, Color.BLUE);
+                        arboles.getCordeY(Nodoauxiliar.getNombre()), null, Color.MAGENTA);//PINTA LOS NODOS DEL CAMINO RECORRIDO
                 Nodoauxiliar = Nodoauxiliar.getPredecesor();
             }//fin de while Recorriendo caminos
             
             Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(nodoFinal), 
-                    arboles.getCordeY(nodoFinal), null, Color.RED);//Pintando Nodo del destino
+                    arboles.getCordeY(nodoFinal), null, Color.GREEN);//PINTA DESTINO
         
     }
 

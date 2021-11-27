@@ -19,8 +19,8 @@ public class Paint {
 
     public static void pinta_Circulo(Graphics g, int x, int y, String n) {
         //g.drawOval(x, y-10, 20, 20);
-        ((Graphics2D) g).setColor(Color.ORANGE);
-        ((Graphics2D) g).setStroke(new BasicStroke(2));//leda el grosor al circulo        
+        ((Graphics2D) g).setColor(Color.CYAN);
+        ((Graphics2D) g).setStroke(new BasicStroke(1));//leda el grosor al circulo        
         ((Graphics2D) g).fillOval(x, y, 15, 15);
         ((Graphics2D) g).setColor(Color.BLACK);
         ((Graphics2D) g).drawOval(x, y, 15, 15);
@@ -51,7 +51,7 @@ public class Paint {
         if (y1 >= y2) {
             yAux = ((y1 - y2) / 2) + y2;
         }
-        ((Graphics2D)g).setColor(Color.BLUE);//PINTANDO TEXTO DE VERTICES(TAMANIO)
+        ((Graphics2D)g).setColor(Color.BLACK);//PINTANDO TEXTO DE VERTICES(TAMANIO)
         Font fuente = new Font("Monospaced", Font.PLAIN, 12);
         g.setFont(fuente);
         ((Graphics2D) g).drawString(String.valueOf(tam), xAux, yAux);
@@ -71,7 +71,7 @@ public class Paint {
         ((Graphics2D) g).setColor(co);
         ((Graphics2D) g).setStroke(new BasicStroke(2));//leda el grosor del contorno al circulo        
         ((Graphics2D) g).fillOval(x, y, 15, 15);//tamanio del circulo
-        ((Graphics2D) g).setColor(Color.BLUE);
+        ((Graphics2D) g).setColor(Color.BLACK);
         ((Graphics2D) g).drawOval(x, y, 15, 15);
 
     }

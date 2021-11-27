@@ -11,7 +11,7 @@ public class Grafics {
 
     /**
      *
-     * @author Jose H Elel
+     * @author Adrian, Andrés, Meibel, Nicol
      */
     public Grafics() {
 
