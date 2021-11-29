@@ -56,6 +56,8 @@ public class main extends javax.swing.JFrame {
         MostrarCaminos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         kmRecorridos = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,7 +82,7 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
@@ -97,7 +99,7 @@ public class main extends javax.swing.JFrame {
         jPanel1.add(BotonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 70, 30));
 
         ImgMapa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mapa_canton1.png"))); // NOI18N
-        jPanel1.add(ImgMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 510));
+        jPanel1.add(ImgMapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 630, 510));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 510));
 
@@ -115,7 +117,7 @@ public class main extends javax.swing.JFrame {
                 EleccionOrigenActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 580, 200, -1));
+        getContentPane().add(EleccionOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 580, 200, -1));
 
         EleccionDestino.setBackground(new java.awt.Color(153, 153, 153));
         EleccionDestino.setEditable(true);
@@ -126,7 +128,7 @@ public class main extends javax.swing.JFrame {
                 EleccionDestinoActionPerformed(evt);
             }
         });
-        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 200, 30));
+        getContentPane().add(EleccionDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 630, 200, 30));
 
         txtDestino.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtDestino.setText("Destiny:");
@@ -136,7 +138,7 @@ public class main extends javax.swing.JFrame {
         txtOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtOrigen.setText("Origin:");
         txtOrigen.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
+        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, -1, -1));
 
         MostrarCaminos.setBackground(new java.awt.Color(51, 51, 51));
         MostrarCaminos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -163,11 +165,16 @@ public class main extends javax.swing.JFrame {
         kmRecorridos.setOpaque(true);
         getContentPane().add(kmRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 730, 160, 40));
 
+        jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
+        jLabel2.setText("Retraso:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, -1, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 200, 30));
+
         jLabel1.setBackground(new java.awt.Color(0, 255, 102));
         jLabel1.setForeground(new java.awt.Color(0, 255, 153));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo (3).jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 630, 290));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 620, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -335,9 +342,8 @@ public class main extends javax.swing.JFrame {
             {0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
         };
-
-        double coe[][] = {
-            {0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+         double coe[][] = {
+            {0, 1, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
@@ -352,7 +358,8 @@ public class main extends javax.swing.JFrame {
             {0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0}
-        };  
+        }; 
+       
 
         int xx1[] = {290,240, 310, 130,170, 320, 270, 210, 240, 275, 350, 220, 90, 390, 480,400};
         int yy1[] = {125,135, 170, 210, 170, 300, 200, 155, 130, 145, 90, 200, 180, 280, 320,400};
@@ -415,15 +422,17 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonSalir;
-    private javax.swing.JButton BuscarCamino;
+    private static javax.swing.JButton BuscarCamino;
     private javax.swing.JComboBox<String> EleccionDestino;
     private javax.swing.JComboBox<String> EleccionOrigen;
     private javax.swing.JLabel ImgMapa;
-    private javax.swing.JButton MostrarCaminos;
+    private static javax.swing.JButton MostrarCaminos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel kmRecorridos;
     private javax.swing.JLabel kmRecorridos2;
     private javax.swing.JLabel txtDestino;

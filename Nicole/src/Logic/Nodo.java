@@ -8,7 +8,7 @@ public class Nodo {
    private  int nombre ;
    private boolean visitado ;
    private boolean etiqueta;
-   private double acumulado; // lleva el acoulado de cada nodo
+   private double acumulado; // lleva el acomulado de cada nodo
    private Nodo Predecesor;
    
    public Nodo(){
