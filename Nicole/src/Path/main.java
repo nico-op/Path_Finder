@@ -72,7 +72,7 @@ public class main extends javax.swing.JFrame {
         txtKMAcumulados.setRows(5);
         jScrollPane1.setViewportView(txtKMAcumulados);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 650, 200, 70));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 200, 70));
 
         BuscarCamino.setBackground(new java.awt.Color(153, 153, 153));
         BuscarCamino.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -82,7 +82,7 @@ public class main extends javax.swing.JFrame {
                 BuscarCaminoActionPerformed(evt);
             }
         });
-        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 720, 100, 30));
+        getContentPane().add(BuscarCamino, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 720, 100, 30));
 
         jPanel1.setBackground(new java.awt.Color(204, 0, 204));
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 550));
@@ -107,7 +107,7 @@ public class main extends javax.swing.JFrame {
         kmRecorridos2.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
         kmRecorridos2.setText("La mejor ruta es:");
         kmRecorridos2.setOpaque(true);
-        getContentPane().add(kmRecorridos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 620, -1, -1));
+        getContentPane().add(kmRecorridos2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 590, -1, -1));
 
         EleccionOrigen.setBackground(new java.awt.Color(102, 102, 102));
         EleccionOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -138,7 +138,7 @@ public class main extends javax.swing.JFrame {
         txtOrigen.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         txtOrigen.setText("Origin:");
         txtOrigen.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 580, -1, -1));
+        getContentPane().add(txtOrigen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, -1, -1));
 
         MostrarCaminos.setBackground(new java.awt.Color(51, 51, 51));
         MostrarCaminos.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -148,7 +148,7 @@ public class main extends javax.swing.JFrame {
                 MostrarCaminosActionPerformed(evt);
             }
         });
-        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 530, -1, -1));
+        getContentPane().add(MostrarCaminos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(153, 153, 153));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -158,16 +158,16 @@ public class main extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 530, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, -1));
 
         kmRecorridos.setBackground(new java.awt.Color(153, 153, 255));
         kmRecorridos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         kmRecorridos.setOpaque(true);
-        getContentPane().add(kmRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 730, 160, 40));
+        getContentPane().add(kmRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 700, 160, 40));
 
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jLabel2.setText("Retraso:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 680, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 200, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 255, 102));
