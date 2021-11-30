@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
     import org.json.simple.JSONArray;
     import org.json.simple.JSONObject;
     import org.json.simple.parser.JSONParser;
+    import Path.main;
 
 /**
  *
@@ -40,7 +41,7 @@ return response;
 
 }
 
-public static void parse(String response,int i,int j){
+public static void parse(String response,int i,int j, String data){
     long distance = -1L;
     //parsing json data and updating data
     {
@@ -53,8 +54,24 @@ public static void parse(String response,int i,int j){
         jo = (JSONObject) ja.get(0);
         JSONObject je = (JSONObject) jo.get("distance");
         distance = (long) je.get("value");
+        System.out.println(distance);
+        
+        float km = distance/1000;
+        System.out.println(km);
+        float timeh = km/80;
+        System.out.println(timeh);
+        float timem = timeh*60;
+        System.out.println(timem);
+        
 
-
+        System.out.println(data);
+        float delay1 = Float.parseFloat(data);
+        float answer = timem + delay1;
+        System.out.println(answer);
+        String answer1 = String.valueOf(answer);
+        System.out.println(answer1);
+        Path.main.TextFieldAnswer.setText(km + "km" + "\n" + "and last " + answer1 + "min");
+        
 
     distances[i][j] = distance;
 
@@ -80,16 +97,16 @@ public static void make_text_file() throws FileNotFoundException {
 
 
 
-public void main(int i, int j) throws Exception{
+public void main(int i, int j, String data) throws Exception{
     distances = new float[n][n];
     if (i != j) {
-    String response = getData(cities[3], cities[1]);
-    parse(response,i,j);
+    String response = getData(cities[i], cities[j]);
+    parse(response,i,j, data);
     }
     else {
     distances[i][j] = 0;
     }
-    make_text_file();
+    //make_text_file();
     }
 
 }

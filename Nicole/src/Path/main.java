@@ -45,8 +45,6 @@ public class main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtKMAcumulados = new javax.swing.JTextArea();
         BuscarCamino = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         BotonSalir = new javax.swing.JButton();
@@ -58,9 +56,9 @@ public class main extends javax.swing.JFrame {
         txtOrigen = new javax.swing.JLabel();
         MostrarCaminos = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        kmRecorridos = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        TextFieldAnswer = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,12 +68,6 @@ public class main extends javax.swing.JFrame {
         setForeground(new java.awt.Color(0, 0, 0));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        txtKMAcumulados.setColumns(20);
-        txtKMAcumulados.setRows(5);
-        jScrollPane1.setViewportView(txtKMAcumulados);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 620, 200, 70));
 
         BuscarCamino.setBackground(new java.awt.Color(153, 153, 153));
         BuscarCamino.setFont(new java.awt.Font("Century Schoolbook", 3, 18)); // NOI18N
@@ -163,21 +155,17 @@ public class main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, -1, -1));
 
-        kmRecorridos.setBackground(new java.awt.Color(153, 153, 255));
-        kmRecorridos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        kmRecorridos.setOpaque(true);
-        getContentPane().add(kmRecorridos, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 700, 160, 40));
-
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 3, 24)); // NOI18N
         jLabel2.setText("Delay:");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 680, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 680, 200, 30));
+        getContentPane().add(TextFieldAnswer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 250, 130));
 
         jLabel1.setBackground(new java.awt.Color(0, 255, 102));
         jLabel1.setForeground(new java.awt.Color(0, 255, 153));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fondo (3).jpeg"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 620, 290));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 620, 250));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,6 +176,9 @@ public class main extends javax.swing.JFrame {
             String nombreOrigen, nombreDestino;
             nombreOrigen = (String) EleccionOrigen.getSelectedItem();
             nombreDestino = (String) EleccionDestino.getSelectedItem();
+            String data = jTextField1.getText();
+            System.out.println("Dato " + data);
+            
             if ("Hatillo".equals(nombreOrigen)) {
                 origen = 0;
             }   if ("Escazú".equals(nombreOrigen)) {
@@ -251,25 +242,17 @@ public class main extends javax.swing.JFrame {
                 destino = 14;
             }   if (origen == destino) {
                 Font fuente = new Font("Arial", Font.BOLD, 18);
-                txtKMAcumulados.setFont(fuente);
                 JOptionPane.showMessageDialog(null, "Estas en:" + nombreOrigen);
-                txtKMAcumulados.setText("Intenta de nuevo!!");
-                txtKMAcumulados.setEnabled(false);
-                txtKMAcumulados.setForeground(Color.BLACK);
                 
             } else {
                 Dijkstra Dijkstra = new Dijkstra(arboles, Numerotope, origen, destino);
                 Dijkstra.dijkstra();
                 
                 Font fuente = new Font("Arial", Font.BOLD, 18);
-                txtKMAcumulados.setFont(fuente);
-                txtKMAcumulados.setText("No hay ningun error :)");
-                txtKMAcumulados.setForeground(Color.RED);
-                txtKMAcumulados.setEnabled(false);
                 
             }   
             MatrixAPI matrix = new MatrixAPI();
-            matrix.main(origen, destino);
+            matrix.main(origen, destino, data);
         } catch (Exception ex) {
             Logger.getLogger(main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -294,7 +277,6 @@ public class main extends javax.swing.JFrame {
         EleccionOrigen.setEnabled(true);
         MostrarCaminos.setEnabled(false);
         MostrarCaminos.setVisible(false);
-        txtKMAcumulados.setEnabled(false);
 
         jPanel1.paint(jPanel1.getGraphics());
 
@@ -401,21 +383,17 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> EleccionOrigen;
     private javax.swing.JLabel ImgMapa;
     private static javax.swing.JButton MostrarCaminos;
+    public static javax.swing.JTextField TextFieldAnswer;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     public static javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel kmRecorridos;
+    public static javax.swing.JTextField jTextField1;
     private javax.swing.JLabel kmRecorridos2;
     private javax.swing.JLabel txtDestino;
-    private javax.swing.JTextArea txtKMAcumulados;
     private javax.swing.JLabel txtOrigen;
     // End of variables declaration//GEN-END:variables
 
-public void metodoHp() {
 
-}
     
 }
