@@ -1,8 +1,8 @@
 package Logic;
 
  /*
-   Los métodos de esta clase se encargan de obtener los parametros de X y Y,
-   tambiém obtiene la matriz de adyacencia.
+   The methods of this class are responsible for obtaining the parameters of X and Y,
+   also get the adjacency matrix.
  */
 public class Grafics {
 
