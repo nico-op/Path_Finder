@@ -51,10 +51,7 @@ public class Paint {
         if (y1 >= y2) {
             yAux = ((y1 - y2) / 2) + y2;
         }
-        ((Graphics2D)g).setColor(Color.BLACK);//PINTANDO TEXTO DE VERTICES(TAMANIO)
-        Font fuente = new Font("Monospaced", Font.PLAIN, 12);
-        g.setFont(fuente);
-        ((Graphics2D) g).drawString(String.valueOf(tam), xAux, yAux);
+       
     }
 
     public static void pinta_Camino(Graphics g, int x1, int y1, int x2, int y2, Color color) {

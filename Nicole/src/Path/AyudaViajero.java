@@ -268,7 +268,7 @@ public class AyudaViajero extends javax.swing.JFrame {
             mostrar.setText("Habitantes:\n" +"-21,335 \n\nLugares interés:\n" + "-Pamaguelos Acosta\n" + "-Unifami Centro Comercial \n\nComidas:\n" + "-Restaurante Los Pozos\n" +
             "-Cafetería El 7 de cada mes \n\nGasolineras:\n" + "-Multiservicios La Rampa");
 
-        if (lugar.equals("Vázques de Coronado"))
+        if (lugar.equals("Vázquez de Coronado"))
             mostrar.setText("Habitantes:\n" +"-60,486 \n\nLugares interés:\n" + "-Instituto de Clodomiro Picado\n" + "-Iglesia San Pedro de Coronado \n\nComidas:\n" + "-Restaurante entre Nubes\n" + 
             "-La Cabaña de Cascajal \n\nGasolineras:\n" + "-Servicentro El Trapiche S.A\n" + "-Bomba Combustibles De Coronado Ltda" );
         
@@ -293,15 +293,15 @@ public class AyudaViajero extends javax.swing.JFrame {
             "-Burger King \n\nGasolineras:\n" + "-Lavacar las Américas\n" + "-UNO" );
         
         if (lugar.equals("Santa Ana"))
-            mostrar.setText("Habitantes:\n" +"-60,453 \n\nLugares interés:\n" + "-Hacienda La Chimba\n " + "-Santa Ana Town Center \n\nComidas:\n" + "-McDonald’s\n" +
+            mostrar.setText("Habitantes:\n" +"-60,453 \n\nLugares interés:\n" + "-Hacienda La Chimba\n" + "-Santa Ana Town Center \n\nComidas:\n" + "-McDonald’s\n" +
             "-Andiamo Là \n\nGasolineras:\n" + "-Gasolinera Montes\n" + "-Gasolinera Lindora y Gas Lp" );
         
         if (lugar.equals("Turrubares"))
-            mostrar.setText("Habitantes:\n" +"-1,357 \n\nLugares interés:\n" + "-Villa Turrubares\n " + "-Parroquia San Pablo de Turrubares \n\nComidas:\n" + 
+            mostrar.setText("Habitantes:\n" +"-1,357 \n\nLugares interés:\n" + "-Villa Turrubares\n" + "-Parroquia San Pablo de Turrubares \n\nComidas:\n" + 
             "-Cabinas y Restaurante Guailichu\n" + "-Soda Chuy  \n\nGasolineras:\n" + "-Gasolinera Migas San Pablo");
         
         if (lugar.equals("Ciudad Colón"))
-            mostrar.setText("Habitantes:\n" +"-16,088 \n\nLugares interés:\n" + "-Los pochotes\n " + "-Waterfall Ciudad Colón \n\nComidas:\n" + "-Restaurante conservatorium\n" +
+            mostrar.setText("Habitantes:\n" +"-16,088 \n\nLugares interés:\n" + "-Los pochotes\n" + "-Waterfall Ciudad Colón \n\nComidas:\n" + "-Restaurante conservatorium\n" +
             "-Antojitos de Villa  \n\nGasolineras:\n" + "-Delta Mora\n" + "-Servicentro los Ángeles" );
         
         if (lugar.equals("Pérez Zeledón"))
@@ -309,7 +309,7 @@ public class AyudaViajero extends javax.swing.JFrame {
             "-Cerro Chirripó \n\nComidas:\n" + "-Finca la Molina\n" +"-Páramo Cafe  \n\nGasolineras:\n" + "-Trova Gasolinera\n" + "-Servicentro Tanok" );
         
         if (lugar.equals("Escazú"))
-            mostrar.setText("Habitantes:\n" +"56,509 \n\nLugares interés:\n" + "-Mirador Escondido\n " + "-Parque de Bello Horizonte \n\nComidas:\n" + "-La Casona De Laly\n" +
+            mostrar.setText("Habitantes:\n" +"56,509 \n\nLugares interés:\n" + "-Mirador Escondido\n" + "-Parque de Bello Horizonte \n\nComidas:\n" + "-La Casona De Laly\n" +
             "-La Posada de las Brujas  \n\nGasolineras:\n" + "No posee" );
         
         if (lugar.equals("Seleccione un lugar"))

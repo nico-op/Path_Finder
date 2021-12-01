@@ -23,7 +23,7 @@ import java.io.FileNotFoundException;
 public class MatrixAPI {
     private static final String API_KEY = "AIzaSyBMPDtKCHtfLb5shu4m7lJBrpGT1HG-Oug";
     public static float[][] distances;
-    public static String[] cities = {"", "SanJose,+CostaRica", "Escazú", "Desamparados", "Barbacoas,+Puriscal", "Santiago,+Puriscal", "Tarrazu", "Aserri", "CiudadColon", "SantaAna,+CostaRica", "Alajuelita", "VazquezdeCoronado", "Acosta,+CostaRica,+", "Turrubares", "Dota,+CostaRica", "PerezZeledon"};
+    public static String[] cities = {"SanJose,+CostaRica", "Escazú", "Desamparados", "Barbacoas,+Puriscal", "Santiago,+Puriscal", "Tarrazu", "Aserri", "CiudadColon", "SantaAna,+CostaRica", "Alajuelita", "VazquezdeCoronado", "Acosta,+CostaRica,+", "Turrubares", "Dota,+CostaRica", "PerezZeledon"};
     public static final int n = cities.length;
 
 
@@ -70,7 +70,7 @@ public static void parse(String response,int i,int j, String data){
         System.out.println(answer);
         String answer1 = String.valueOf(answer);
         System.out.println(answer1);
-        Path.main.TextFieldAnswer.setText(km + "km" + "\n" + "and last " + answer1 + "min");
+        Path.main.TextFieldAnswer.setText(km + " km" + "\n" + " and last " + answer1 + " min");
         
 
     distances[i][j] = distance;
