@@ -12,14 +12,21 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Nico
+ * @author Nicol, Meibel, Adrián, Andrés
  */
+
+
 public class main extends javax.swing.JFrame {
 
     private int Numerotope = 0;//Numero de nodos 
     
     Grafics arboles = new Grafics();
 
+    /*
+    This method is responsible for painting the lines between the figures 
+    according to the start and end coordinates, in addition, it paints the
+    points of the nodes.
+    */
     public static void PintarFiguras(int tope, Grafics arboles) {//pinta lo q esta antes en el panel 
         for (int j = 0; j < tope; j++) {
             for (int k = 0; k < tope; k++) {
@@ -34,6 +41,9 @@ public class main extends javax.swing.JFrame {
 
     }
 
+    /*
+    This method takes care of initializing the components
+    */
     public main() {
         initComponents();
         EleccionDestino.setEnabled(false);
@@ -170,6 +180,10 @@ public class main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * The source and destination variables are initialized.
+     * @param evt 
+     */
     private void BuscarCaminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscarCaminoActionPerformed
         try {
             int origen = 0, destino = 0;
@@ -271,9 +285,14 @@ public class main extends javax.swing.JFrame {
     private void EleccionOrigenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EleccionOrigenActionPerformed
         EleccionDestino.setEnabled(true);
     }//GEN-LAST:event_EleccionOrigenActionPerformed
-
+    
+    /*
+    The Show Paths button contains the matrix that indicates which nodes are 
+    connected to each other and the distance between them, in addition, the 
+    points are located.
+    
+    */
     private void MostrarCaminosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MostrarCaminosActionPerformed
-        //jMenuItem2.setEnabled(false);
         EleccionOrigen.setEnabled(true);
         MostrarCaminos.setEnabled(false);
         MostrarCaminos.setVisible(false);
@@ -317,19 +336,21 @@ public class main extends javax.swing.JFrame {
          
         }; 
        
-
+        //  Coordinates where the nodes are located
         int xx1[] = {290,240, 310, 130,170, 320, 270, 210, 240, 275, 350, 220, 90, 390, 480,400};
         int yy1[] = {125,135, 170, 210, 170, 300, 200, 155, 130, 145, 90, 200, 180, 280, 320,400};
         String nom[] = {"1", "2", "3", "4.1", "4.2","5", "6", "7","9", "10", "11", "12", "16", "17", "19", "22"};
       
         
-     
+        // X and Y parameters are sent
         for (int j = 0; j < 15; j++) {
             arboles.setCordeX(j, xx1[j]);
             arboles.setCordeY(j, yy1[j]);
             arboles.setNombre(j, nom[j]);
 
         }
+        
+        // The adjacency matrix and the coefficient are sent
         for (int j = 0; j < 15; j++) {
             for (int k = 0; k < 15; k++) {
                 arboles.setmAdyacencia(j, k, Matriz[j][k]);

@@ -10,13 +10,16 @@ public class Dijkstra {
     private final Grafics arboles;
     private int subTope;
     private Nodo Nodoauxiliar = null;
-    private double auxiliarAumulado; // es un acumulado auxiliar
+    private double auxiliarAumulado; 
     private double subtotalAcomulado;
     private final Nodo nodo[];
     private final int tope;
     private int Origen;
     private final int nodoFinal;
-
+ 
+    /*
+    Constructor method
+    */
     public Dijkstra(Grafics arboles, int tope, int permanente, int nodoFin) {
         this.arboles = arboles;
         this.tope = tope;
@@ -26,6 +29,9 @@ public class Dijkstra {
 
     }
 
+    /**
+     * These methods get the accumulated and the name respectively
+     */
     public double getAcumulado() {
         return nodo[nodoFinal].getAcumulado();
     }
@@ -33,9 +39,14 @@ public class Dijkstra {
     public int getNombre() {
         return nodo[nodoFinal].getNombre();
     }
-
+    
+    //--------------------------------------------------------------------------
+    /**
+     *This is the method in charge of finding the shortest path between points.
+     * It also paints the road and the points of origin and destination.
+     */
     public void dijkstra() {
-        for (int i = 0; i < tope; i++) // creacion del vector nodo del tamaño del numero de nodos pintados 
+        for (int i = 0; i < tope; i++) // creation of the node vector of the size of the number of painted nodes
         {
             nodo[i] = new Nodo();
         }
@@ -43,14 +54,14 @@ public class Dijkstra {
             PintarFiguras(tope, arboles);
             Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(Origen), 
-                    arboles.getCordeY(Origen), null, Color.DARK_GRAY); // pinta de color el nodo de Origen
+                    arboles.getCordeY(Origen), null, Color.DARK_GRAY); // color the Origin node
 
             nodo[Origen].setVisitado(true);
             nodo[Origen].setNombre(Origen);
 
             do {
                 subtotalAcomulado = 0;
-                auxiliarAumulado = 2000000000; // lo igualamos a esta cifra ya q el acomulado de los nodos, a la que nunca sera mayor 
+                auxiliarAumulado = 2000000000; // we equate it to this figure since the accumulated of the nodes, to which it will never be greater
                 nodo[Origen].setEtiqueta(true);
                 for (int j = 0; j < tope; j++) {
                     if (arboles.getmAdyacencia(j, Origen) == 1) {
@@ -70,8 +81,8 @@ public class Dijkstra {
                     }
                 }
                 
-                //Encontrando Camino mas corto
-                for (int i = 0; i < tope; i++) { // buscamos cual de los nodos visitado tiene el acomulado menor par escogerlo como camino
+                //Finding the shortest way
+                for (int i = 0; i < tope; i++) { //We look for which of the visited nodes has the smallest accumulated to choose it as the path
                     if (nodo[i].isVisitado() == true && nodo[i].isEtiqueta() == false) {
                         if (nodo[i].getAcumulado() <= auxiliarAumulado) {
                             Origen = nodo[i].getNombre();
@@ -84,9 +95,9 @@ public class Dijkstra {
 
             Nodoauxiliar = nodo[nodoFinal];
             
-            //Pintando caminos recorridos
+            //Painting roads traveled
             while (Nodoauxiliar.getPredecesor() != null) {
-                Paint.pinta_Camino(jPanel1.getGraphics(), // PINTA EL CAMINO 
+                Paint.pinta_Camino(jPanel1.getGraphics(), // PAINT THE ROAD
                         arboles.getCordeX(Nodoauxiliar.getNombre()),
                         arboles.getCordeY(Nodoauxiliar.getNombre()),
                         arboles.getCordeX(Nodoauxiliar.getPredecesor().getNombre()), 
@@ -94,13 +105,13 @@ public class Dijkstra {
                 
                 Paint.seleccionNodo(jPanel1.getGraphics(), 
                         arboles.getCordeX(Nodoauxiliar.getNombre()), 
-                        arboles.getCordeY(Nodoauxiliar.getNombre()), null, Color.MAGENTA);//PINTA LOS NODOS DEL CAMINO RECORRIDO
+                        arboles.getCordeY(Nodoauxiliar.getNombre()), null, Color.MAGENTA);//PAINT THE NODES OF THE ROAD TRAVELED
                 Nodoauxiliar = Nodoauxiliar.getPredecesor();
-            }//fin de while Recorriendo caminos
+            }
             
             Paint.seleccionNodo(jPanel1.getGraphics(), 
                     arboles.getCordeX(nodoFinal), 
-                    arboles.getCordeY(nodoFinal), null, Color.GREEN);//PINTA DESTINO
+                    arboles.getCordeY(nodoFinal), null, Color.GREEN);//DESTINATION PAINT
         
     }
 

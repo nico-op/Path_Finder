@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Path;
 
 import Path.main;
@@ -17,6 +12,10 @@ public class AyudaViajero extends javax.swing.JFrame {
      * Creates new form AyudaViajero
      */
     @SuppressWarnings("unchecked")
+    
+    /**
+     * In a list the different places that can be consulted are added. 
+     */
     public AyudaViajero() {
         initComponents();
         List cities = new LinkedList<>();
@@ -36,9 +35,8 @@ public class AyudaViajero extends javax.swing.JFrame {
         cities.add("Pérez Zeledón");
         cities.add("Ciudad Colón");
         cities.add("Turrubares");
-       //hola
         
-        
+        // The sorting algorithm is used.
         Collections.sort(cities);
         Lugares.addItem("Seleccione un lugar");
         cities.forEach(city -> {
@@ -247,7 +245,10 @@ public class AyudaViajero extends javax.swing.JFrame {
     private void LugaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LugaresActionPerformed
    
     }//GEN-LAST:event_LugaresActionPerformed
-
+    /*
+    In Item Places, the information of the places is added, this information is 
+    displayed according to the selected place
+    */
     private void LugaresItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_LugaresItemStateChanged
         // TODO add your handling code here:
         String lugar = (String)Lugares.getSelectedItem();

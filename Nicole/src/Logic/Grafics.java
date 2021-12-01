@@ -1,5 +1,9 @@
 package Logic;
 
+ /*
+   Los métodos de esta clase se encargan de obtener los parametros de X y Y,
+   tambiém obtiene la matriz de adyacencia.
+ */
 public class Grafics {
 
     private final double MatrizCoeficiente[][] = new double[51][51];
@@ -13,18 +17,30 @@ public class Grafics {
      *
      * @author Adrian, Andrés, Meibel, Nicol
      */
+    
+  
     public Grafics() {
 
     }
-
+    
+    /*
+    Method that obtains the coefficient
+    */
     public double getmCoeficiente(int i, int j) {
         return MatrizCoeficiente[i][j];
     }
-
+    
+    /*
+    Method that gets adjacency
+    */
     public int getmAdyacencia(int i, int j) {
         return MatrizAdyacencia[i][j];
     }
-
+    
+    /*
+    The getCordex, getCordeY, getNombre and getEnArbol methods are responsible 
+    for obtaining coordinates, names and tree
+    */
     public int getCordeX(int i) {
         return cordenadaX[i];
     }
@@ -40,7 +56,12 @@ public class Grafics {
     public int getEnArbol(int i) {
         return enArbol[i];
     }
-
+    //--------------------------------------------------------------------------
+    
+    /*
+    These methods send the coefficient, the adjacency, the coordinates, the
+    name and tree
+    */
     public void setmCoeficiente(int i, int j, double mCoeficiente) {
         this.MatrizCoeficiente[i][j] = mCoeficiente;
     }
@@ -64,7 +85,10 @@ public class Grafics {
     public void setEnArbol(int i, int enArbol) {
         this.enArbol[i] = enArbol;
     }
-
+    //--------------------------------------------------------------------------
+    /*
+    It is responsible for creating the tree
+    */
     public void crearEnArbol(int i) {
         enArbol = new int[i];
     }
